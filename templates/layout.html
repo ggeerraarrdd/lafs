@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+
+    <!-- https://favicon.io/emoji-favicons/money-bag/ -->
+    <link href="/static/favicon.ico" rel="icon">
+    
+    <link href="/static/styles.css" rel="stylesheet">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    {%- block map %}{% endblock %}
+
+    <title>
+        Landscape Architecture Film Series @ UIUC ({% block title %}{% endblock %})
+    </title>
+</head>
+
+<body>
+
+    <div class="main-container" bgcolor="{{ series.color1 }}">
+
+        <!-- Top Container -->
+        <div class="top-container" style="background-color: {{ series.color1 }}; color: {{ series.color2 }};">
+
+            <!-- Top Container - Title -->
+            <div style="padding: 10px; width: 22vw; font-size: 18px; overflow-wrap: break-word;">
+                {{ series.semester.upper() }}<span style="color: {{ series.color3 }};">LANDSCAPE<br>ARCHITECTURE</span>FILMSERIES
+            </div>
+
+            <!-- Top Container - Byline -->
+            <div style="padding-top: 10px; padding-left: 20px; width: 65vw;">
+                organized by the <a href="/org" style="color: {{ series.color3 }};">O</a>RG for the
+                <a href="https://landarch.illinois.edu/" target="_blank" style="color: {{ series.color3 }};">D</a>epartment of 
+                Landscape Architecture, <a href="https://faa.illinois.edu/" target="_blank" style="color: {{ series.color3 }};">C</a>ollege 
+                of Fine and Applied Arts, <a href="https://illinois.edu/" target="_blank" style="color: {{ series.color3 }};">U</a>niversity 
+                of Illinois Urbana/Champaign
+            </div>
+
+            <!-- Top Container - Location -->
+            <div style="padding: 10px; width: 14vw; white-space: nowrap; overflow: hidden;">
+                <a href="/map" style="color: {{ series.color3 }};">P</a>LYM AUDITORIUM<br>
+                134 TEMPLE BUELL HALL<br>
+                WEDNESDAYS @ 7:30pm<br>
+                FREE ADMISSION<br>
+                <br>
+                {% if series.series_poster %}
+                Poster<br><br>
+                {% endif %}
+            </div>
+
+            <!-- Top Container - Links to all past and current series -->
+            <div class="top-container-serieses" style="padding: 10px; width: 1vw; font-weight: 100;">
+                {% for series_id in series_ids %}
+                {% if series_id.series_display == "Yes" %}
+                <form action="/series" method="post">
+                    <input type="hidden" name="series-id" class="hidden-field" value="{{ series_id.series_id }}">
+                    <button class="button-series" name="button-series" type="submit">
+                        <span style="color: {{ series.color3 }};">
+                            <span style="text-decoration: underline;">
+                                {{ series_id.series_id }}
+                            </span>
+                        </span>
+                    </button>
+                </form>
+                {% endif %}
+                {% endfor %}
+            </div>
+
+        </div>
+
+
+
+
+
+        <!-- Middle Container -->
+        <div class="middle-container">
+
+            <!-- Middle Container - Left -->
+            <div class="middle-container-left" style="background-color: {{ series.color1 }};">
+            </div>
+
+            <!-- Middle Container - Right -->
+            {% block main %}{% endblock %}
+
+        </div>
+
+
+
+
+
+        <!-- Bottom Container -->
+        <div class="bottom-container" style="background-color: {{ series.color1 }};">
+
+            <table>
+                <tr>
+                    <!-- List of films and their scheduled showtimes for selected series -->
+                    {% for schedule in schedules %}
+
+                    <td valign="top">
+                        <span style="color: {{ series.color2 }};">+</span>
+                    </td>
+                    <td valign="top" style="word-wrap: break-word;">
+                        <div style="width: 375px;">
+                            <!-- Date -->
+                            <span style="color: {{ series.color2 }};">
+                                {{ schedule.day }}.{{ schedule.month.lower() }}<br>
+                            </span>
+                            <!-- Film Title -->
+                            <form action="/film" method="post">
+                                <input type="hidden" name="series-id" class="hidden-field"
+                                    value="{{ series.series_id }}">
+                                <input type="hidden" name="film-id" class="hidden-field" value="{{ schedule.id }}">
+                                <button class="button-title" name="button-title" type="submit">
+                                    <span style="color: {{ series.color3 }};">
+                                        <span style="text-decoration: underline;">
+                                            {{ schedule.film_title.upper() }}
+                                        </span>
+                                    </span>
+                                </button>
+                            </form>
+
+                            <!-- Film Info -->
+                            <span style="font-size: 11px;">
+                                <span style="color: {{ series.color2 }};">
+                                    (dir. {{ schedule.film_director }},
+                                    {{ schedule.film_year }},
+                                    {{ schedule.film_runtime }}min)<br>
+                                </span>
+                            </span>
+                            <br>
+                        </div>
+                    </td>
+
+                    {% endfor %}
+                </tr>
+            </table>
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+</body>
+
+</html>
