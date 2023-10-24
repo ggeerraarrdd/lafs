@@ -8,7 +8,7 @@ In need of a website to use as a vehicle to play around with a few AWS services 
 
 This, then, is that 20-year-old static website ressurrected as a dynamic web application with a data model to speak of, using modern tools such Flask, SQLite, VS Code and Git.
 
-<picture><img src="/static/images/film-series1.jpg"></picture>
+<picture><img src="/static/images/film-series1_2.jpg"></picture>
 More screenshots below.
 
 ## Disclaimer
@@ -27,6 +27,7 @@ N/A
 ### Dependencies
 
 * Flask==2.2.5
+* flask_session==0.5.0
 
 ### Usage
 
@@ -63,11 +64,6 @@ $ echo $MAP_API_KEY
 ## Author(s)
 * [@ggeerraarrdd](https://github.com/ggeerraarrdd/)
 
-## Version History
-* 1.0.0
-    * October 16, 2023
-    * Minimum viable product
-
 ## Future Work
 
 * Change database to PostgreSQL and migrate to AWS RDS
@@ -81,5 +77,7 @@ $ echo $MAP_API_KEY
 * The distribution code for CS50's Finance problem served as a template for the app.
 
 ## Screenshots
-<picture><img src="/static/images/film-series2.jpg"></picture>
-<picture><img src="/static/images/film-series3.jpg"></picture>
+<picture><img src="/static/images/film-series2_2.jpg"></picture>
+<picture><img src="/static/images/film-series3_2.jpg"></picture>
+<picture><img src="/static/images/film-series4_1.jpg"></picture>
+<picture><img src="/static/images/film-series5_1.jpg"></picture>

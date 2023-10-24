@@ -4,39 +4,37 @@
 
 {% block main %}
 
-<div class="middle-container-right"  style="background-color: {{ series.color2 }}; color: {{ series.color1 }};">
-    <span class="middle-container-right-film-text">
+<div class="middle-container-right-film">
 
-        <!-- Film - Schedule -->
-        {% for schedule in schedules %}
-        {% if schedule.id == film.id %}
-        {{ schedule.day }}.{{ schedule.month.lower() }}<br>
-        {% endif %}
-        {% endfor %}
+    <!-- Film - Schedule -->
+    {% for schedule in schedules %}
+    {% if schedule.id == film.id %}
+    {{ schedule.day }}.{{ schedule.month.lower() }}<br>
+    {% endif %}
+    {% endfor %}
 
-        <!-- Film - Title -->
-        <span class="middle-container-right-film-title" style="color: {{ series.color3 }};">
-            {{ film.film_title.upper() }}<br>
-        </span>
-
-        <!-- Film - Director / Year / Runtime-->
-        (dir. {{ film.film_director }}, {{ film.film_year }}, {{ film.film_runtime }}min)<br>
-        <br>
-
-        <!-- Film - Description -->
-        {% if film.film_description %}
-        <span style="display: inline-block; width: 50%;">
-            {{ film.film_description }}
-        </span><br>
-        <br>
-        {% endif %}
-
-        <!-- Film - Wiki -->
-        {% if film.wiki %}
-        <a href="{{ film.wiki }}" target="_blank" style="color: {{ series.color3 }};">wiki</a>
-        {% endif %}
+    <!-- Film - Title -->
+    <span class="middle-container-right-film-title" style="color: {{ series.color3 }};">
+        {{ film.film_title.upper() }}<br>
     </span>
-</div>
 
+    <!-- Film - Director / Year / Runtime-->
+    (dir. {{ film.film_director }}, {{ film.film_year }}, {{ film.film_runtime }}min)<br>
+    <br>
+
+    <!-- Film - Description -->
+    {% if film.film_description %}
+    <span style="display: inline-block; width: 50%;">
+        {{ film.film_description }}
+    </span><br>
+    <br>
+    {% endif %}
+
+    <!-- Film - Wiki -->
+    {% if film.wiki %}
+    <a href="{{ film.wiki }}" target="_blank" style="color: {{ series.color3 }};">wiki</a>
+    {% endif %}
+
+</div>
 
 {% endblock %}

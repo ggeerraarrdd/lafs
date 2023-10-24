@@ -4,11 +4,9 @@ body {
   font-family: Verdana, Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: subpixel-antialiased !important;
   -webkit-text-size-adjust: 100%;
+  height: 100svh;
+  min-height: -webkit-fill-available;
   overflow-y: hidden;
-}
-
-body.cms {
-  overflow-y: auto;
 }
 
 
@@ -24,9 +22,9 @@ body.cms {
 .main-container {
   margin: 0;
   padding: 0;
-  height: 100vh;
   position: absolute;
   left: 0;
+  height: 100svh;
 }
 
 
@@ -41,16 +39,17 @@ body.cms {
 /* Top Container */
 .top-container {
   margin: 0;
-  height: 38vh;
+  height: 38svh;
   width: 100vw;
   font-weight: bold;
   font-size: 11px;
   position: fixed;
-  top: 0vh;
+  top: 0svh;
   display: flex;
 }
 
 .top-container-serieses {
+  
   line-height: 1.6em;
 }
 
@@ -59,6 +58,8 @@ body.cms {
   background: none !important;
   border: none;
   cursor: pointer;
+  font-weight: bold;
+  font-size: 11px;
 }
 
 
@@ -74,10 +75,10 @@ body.cms {
 .middle-container {
   margin: 0;
   padding: 0;
-  height: 24vh;
+  height: 24svh;
   width: 100vw;
   position: fixed;
-  top: 38vh;
+  top: 38svh;
   display: flex;
 }
 
@@ -85,24 +86,32 @@ body.cms {
   margin: 0;
   padding: 0;
   width: 22vw;
-  /* background-image: url(house.gif); 
-  background-size: cover; */
 }
 
 .middle-container-right {
   margin: 0;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
+  padding: 0;
   width: 78vw;
   display: table;
 }
 
-.middle-container-right-title {
+.middle-container-right-index {
+  margin: 0;
+  padding-left: 30px;
+  padding-right: 30px;
   font-size: 44px;
   font-weight: bold;
   display: table-cell;
   vertical-align: middle;
+}
+
+.middle-container-right-film {
+  margin: 0;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+  font-size: 14px;
+  display: table;
 }
 
 .middle-container-right-film-title {
@@ -110,15 +119,26 @@ body.cms {
   font-weight: bold;
 }
 
-.middle-container-right-film-text {
-  font-size: 12px;
+.middle-container-right-org {
+  margin: 0;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+  height: 22svh;
+  font-size: 14px;
+}
+
+.middle-container-right-org-title {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 /* Set the size of the div element that contains the map */
 #map {
-  margin-bottom: 0;
-  height: 100%;
-  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 24svh;
+  width: 78vw;
 }
 
 
@@ -133,17 +153,17 @@ body.cms {
 /* Bottom Container */
 .bottom-container {
   margin: 0;
-  padding: 0px;
+  padding: 40px 300px 0 0;
   width: 100%;
-  height: 38vh;
+  height: 38svh;
   position: relative;
-  top: 62vh;
+  top: 62svh;
   font-size: 15px;
 }
 
-table {
+/* table {
   height: 100%;
-}
+} */
 
 .button-title {
   padding: 2px 2px 2px 0px;
@@ -154,295 +174,13 @@ table {
   font-weight: bold;
 }
 
-
-
-
-
-
-
-
-
-
-/* --------------------- */
-/*          CMS          */
-/* --------------------- */
-
-/* CMS - Main Container */
-.cms-main-container {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  position: relative;
-  align-items: center;
-  font-family: Verdana, Arial, Helvetica, sans-serif;
+.text-left {
+  text-align: left !important;
 }
 
 
 
 
 
-/* CMS - Top Container */
-.cms-top-container {
-  margin: 0;
-  height: 80px;
-  width: 100%;
-  font-size: 11px;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  background-color: #dd3e3e;
-  color: #f2f2f2;
-}
-
-.cms-top-container a {
-  color: #f2f2f2;
-  text-decoration: none;
-}
-
-.cms-top-container-left {
-  margin: 0;
-  padding: 0px 0px 15px 20px;
-  width: 50%;
-  height: 75px;
-  font-size: 15px;
-  line-height: 1;
-  display: flex;
-  justify-content: left;
-  align-items: end;
-}
-
-.cms-top-container-left-text-main {
-  padding-right: 25px;
-  text-decoration: none; 
-  font-size: 32px; 
-  font-weight: bold; 
-  white-space: nowrap;
-}
-
-.cms-top-container-left-text-regular {
-  padding-bottom: 2px;
-  text-decoration: none; 
-  font-size: 15px; 
-  white-space: nowrap;
-}
-
-.cms-top-container-left-text-regular a {
-  padding-right: 10px;
-}
-
-.cms-top-container-right {
-  margin: 0;
-  padding: 0px 20px 15px 0px;
-  width: 50%;
-  height: 75px;
-  font-size: 15px;
-  line-height: 1;
-  display: flex;
-  justify-content: right;
-  align-items: end;
-}
-
-.cms-top-container-right-text {
-  margin: 0;
-  padding-bottom: 2px;
-}
 
 
-
-
-
-/* CMS - Bottom Container - Parent - Index */
-.cms-bottom-container-parent-index {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 75px;
-}
-
-/* CMS - Bottom Container - Child - Index */
-.cms-bottom-container-child-index {
-  margin: 0;
-  padding-top: 50px;
-  padding-bottom: 200px;
-  width: 1700px;
-  font-size: 15px;
-}
-
-.cms-btn-primary {
-  color: #f2f2f2;
-  background-color: #dd3e3e;
-  border-color: #dd3e3e;
-}
-
-.cms-btn {
-  display: inline-block;
-  width: 125px;
-  line-height: 1.5;
-  text-align: center;
-  text-decoration: none;
-  vertical-align: middle;
-  border: 1px solid transparent;
-  padding: 0.2rem 0.75rem;
-  font-size: .9rem;
-  border-radius: 0.25rem;
-  transition: 
-    color .15s ease-in-out, 
-    background-color 1.15s ease-in-out, 
-    border-color .15s ease-in-out, 
-    box-shadow .15s ease-in-out;
-}
-
-.cms-btn:disabled {
-  background-color: #d3d6db;
-}
-
-.cms-btn-poster {
-  width: 275px;
-}
-
-.cms-btn-imdb {
-  padding: 0.2rem 0.3rem;
-  width: 70px;
-}
-
-
-/* CMS - Bottom Container - Parent */
-.cms-bottom-container-parent {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 75px;
-}
-
-/* CMS - Bottom Container - Child */
-.cms-bottom-container-child {
-  margin: 0;
-  padding-top: 50px;
-  padding-bottom: 200px;
-  width: 1000px;
-  font-size: 15px;
-}
-
-/* CMS - Bottom Container - Child - Section - Heading */
-.cms-bottom-container-child-section-heading {
-  margin: 0;
-  padding-bottom: 10px;
-  font-size: 26px;
-  font-weight: bold;
-}
-
-/* CMS - Bottom Container - Child - Section - Body */
-.cms-bottom-container-child-section-body {
-  margin: 0;
-  padding: 30px;
-  background-color: #f2f2f2;
-}
-
-
-/* CMS - Bottom Container - Child - Section - Body - Series Status */
-.cms-bottom-container-child-section-body-status {
-  padding-left: 100px;
-  display: flex;
-  width: 500px;
-  justify-content:
-    left;
-  align-items: center;
-}
-
-/* CMS - Bottom Container - Child - Section - Body - Labels */
-label {
-  margin-bottom: 2px;
-  padding: 0;
-  font-size: 11px;
-  color: #dd3e3e;
-  text-transform: uppercase;
-  letter-spacing: .05em;
-  cursor: auto;
-}
-
-/* CMS - Bottom Container - Child - Section - Body - Input and Textarea Fields */
-input, 
-textarea {
-  margin: 0;
-  border: 0;
-  padding: 5px;
-  color: black;
-  font-size: 14px;
-}
-
-/* CMS - Bottom Container - Child - Section - Body - Input and Textarea Fields */
-/* WHEN DISABLED - WHEN VIEW ONLY */
-input:disabled,
-textarea:disabled {
-  margin: 0;
-  padding: 5px;
-  background-color: white;
-  border: 1px;
-  resize: none;
-  cursor: text;
-}
-
-/* CMS - Bottom Container - Child - Section - Body - Index */
-.cms-bottom-container-child-section-body-index {
-  padding: 10px;
-  font-size: 20px;
-  font-weight: bold;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  background-color: #ffffff;
-  color: #dd3e3e;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* CMS - Bottom Container - Child - Section - Body - Index Placeholder Value */
-/* DO NOT DELETE: FOR CREATE PAGE */
-input.cms-bottom-container-child-section-body-index::-webkit-input-placeholder {
-  color: #dd3e3e;
-  text-align: center;
-}
-
-/* CMS - Bottom Container - Child - Section - Body - Mini-site Parent */
-.cms-bottom-container-child-section-body-minisite-parent {
-  width: 940px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* CMS - Bottom Container - Child - Section - Body - Mini-site Child */
-.cms-bottom-container-child-section-body-minisite-child {
-  width: 900px;
-  padding: 0px;
-}
-
-.cms-bottom-container-child-section-body-minisite-child-top {
-  margin: 0;
-  padding: 10px;
-  height: 190px;
-  font-size: 10px;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-.cms-bottom-container-child-section-body-minisite-child-right {
-  margin: 0;
-  padding: 15px;
-  width: 702px;
-  height: 120px;
-  font-size: 18px;
-  text-transform: uppercase;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-}

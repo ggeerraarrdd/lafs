@@ -9,6 +9,7 @@ import queries
 
 # Configure application
 app = Flask(__name__)
+
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
@@ -17,7 +18,7 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
-# Configure CS50 Library to use SQLite database
+# Set SQLite database variable
 db = "lafs.db"
 
 # Make sure Google Maps API key is set
@@ -30,16 +31,7 @@ if not os.environ.get("MAP_API_KEY"):
 else:
     print("MAP_API_KEY set")
     map_api_key = os.environ.get("MAP_API_KEY")
-
-
-@app.after_request
-def after_request(response):
-    """Ensure responses aren't cached"""
-    response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate, max-age=0"
-    response.headers["Expires"] = 0
-    response.headers["Pragma"] = "no-cache"
-    return response
-
+    
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -82,12 +74,18 @@ def series():
     # Populate Bottom Container
     # List of films and their scheduled showtimes for selected past series
 
+    # Temporary bypass to session timeouts
+    try:
+        current_series_id = session["current_series_id"]
+    except KeyError:
+        current_series_id = 1
+
     if request.method == "POST":
 
         # Get info of clicked series id 
         series_id = int(request.form.get("series-id"))
 
-        if series_id == session["current_series_id"]:
+        if series_id == current_series_id:
             return redirect("/")
         else:
             # Update session variable active_series_id 
@@ -168,5 +166,3 @@ def org():
 
     return render_template("org.html", series=series, schedules=schedules, series_ids=series_ids)
 
-
-# chrome://net-internals/#sockets
