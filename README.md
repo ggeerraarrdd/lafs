@@ -91,8 +91,8 @@ New features development is ongoing.
 
 ## Screenshots
 
-![Film Series](/static/images/film-series0_1.png)
-![Film Series](/static/images/film-series2_3.png)
-![Film Series](/static/images/film-series3_3.png)
-![Film Series](/static/images/film-series4_2.png)
-![Film Series](/static/images/film-series5_2.png)
+![Film Series](/static/images/film-series0_1.png "Landscape Architecture Film Series")*Image created using [Portfoliofy](https://github.com/ggeerraarrdd/portfoliofy).*
+![Film Series](/static/images/film-series2_3.png "Landscape Architecture Film Series")
+![Film Series](/static/images/film-series3_3.png "Landscape Architecture Film Series")
+![Film Series](/static/images/film-series4_2.png "Landscape Architecture Film Series")
+![Film Series](/static/images/film-series5_2.png "Landscape Architecture Film Series")
