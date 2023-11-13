@@ -10,7 +10,7 @@ In need of a website to use as a vehicle to play around with a few AWS services 
 
 This, then, is that 20-year-old static website ressurrected as a dynamic web application with a data model to speak of, using modern tools such Flask, SQLite, VS Code and Git.
 
-![Film Series](/static/images/film-series1_2.jpg)
+![Film Series](/static/images/film-series1_3.png)
 
 More screenshots below.
 
@@ -77,7 +77,7 @@ echo $MAP_API_KEY
 
 New features development is ongoing.
 
-* Change database to PostgreSQL and migrate to AWS RDS
+* Migrate to a Postgres database on AWS
 * Deploy Flask app with AWS Lightsail and/or AWS Elastic Beanstalk
 * Create CMS for user management and content creation and editing
 
@@ -87,11 +87,12 @@ New features development is ongoing.
 
 ## Acknowledgments
 
-* The distribution code for CS50's Finance problem served as a template for the app.
+* The distribution code for CS50's [Finance pset](https://cs50.harvard.edu/x/2023/psets/9/finance/) served as a template for the app.
 
 ## Screenshots
 
-![Film Series](/static/images/film-series2_2.jpg)
-![Film Series](/static/images/film-series3_2.jpg)
-![Film Series](/static/images/film-series4_1.jpg)
-![Film Series](/static/images/film-series5_1.jpg)
+![Film Series](/static/images/film-series0_1.png)
+![Film Series](/static/images/film-series2_3.png)
+![Film Series](/static/images/film-series3_3.png)
+![Film Series](/static/images/film-series4_2.png)
+![Film Series](/static/images/film-series5_2.png)
