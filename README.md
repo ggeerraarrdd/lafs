@@ -6,7 +6,7 @@ Early aughts basic website recreated using modern tools
 
 In the early aughts, I co-founded the _Landscape Architecture Film Series_ for the Department of Landscape Architecture at the University of Illinois Urbana/Champaign and for which I designed a website.
 
-In need of a website to use as a vehicle to play around with a few AWS services (see [Future Work](#future-work)) but not wanting to spend anytime to ideate and design from scratch, I turned to my [old website](https://web.archive.org/web/20040827234527/http://www.rehearsal.uiuc.edu/projects/filmseries/). Its look and feel has aged well, I think, and indeed looks remarkably contemporary. For instance, if the current version of MoMA's [film series](https://www.moma.org/calendar/film/5632) is anything to go by, bold color blocking isn't a dated design choice.
+In need of a website to use as a vehicle to play around with a few AWS services (see [Future Work](#future-work)) but not wanting to spend anytime to ideate and design a new one from scratch, I turned to my [old website](https://web.archive.org/web/20040827234527/http://www.rehearsal.uiuc.edu/projects/filmseries/). Its look and feel has aged well, I think, and indeed looks remarkably contemporary. For instance, if the current version of MoMA's [film series](https://www.moma.org/calendar/film/5632) is anything to go by, bold color blocking isn't a dated design choice.
 
 This, then, is that 20-year-old static website ressurrected as a dynamic web application with a data model to speak of, using modern tools such Flask, SQLite, VS Code and Git.
 
@@ -91,7 +91,8 @@ New features development is ongoing.
 
 ## Screenshots
 
-![Film Series](/static/images/film-series0_1.png "Landscape Architecture Film Series")*Image created using [Portfoliofy](https://github.com/ggeerraarrdd/portfoliofy).*
+![Film Series](/static/images/film-series0_2.png "Landscape Architecture Film Series")*Image created using [Portfoliofy](https://github.com/ggeerraarrdd/portfoliofy).*
+
 ![Film Series](/static/images/film-series2_3.png "Landscape Architecture Film Series")
 ![Film Series](/static/images/film-series3_3.png "Landscape Architecture Film Series")
 ![Film Series](/static/images/film-series4_2.png "Landscape Architecture Film Series")
