@@ -1,6 +1,6 @@
 # Landscape Architecture Film Series Website
 
-Early aughts basic website recreated using modern tools
+An early aughts basic website recreated using modern tools
 
 ## Description
 
