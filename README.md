@@ -4,6 +4,8 @@ An early aughts basic website recreated using modern tools
 
 ## Description
 
+_**NOTE:** The website now has a companion CMS in alpha. Check it out in its own [repo](https://github.com/ggeerraarrdd/lafs-cms)._
+
 In the early aughts, I co-founded the _Landscape Architecture Film Series_ for the Department of Landscape Architecture at the University of Illinois Urbana/Champaign and for which I designed a website.
 
 In need of a website to use as a vehicle to play around with a few AWS services (see [Future Work](#future-work)) but not wanting to spend anytime to ideate and design a new one from scratch, I turned to my [old website](https://web.archive.org/web/20040827234527/http://www.rehearsal.uiuc.edu/projects/filmseries/). Its look and feel has aged well, I think, and indeed looks remarkably contemporary. For instance, if the current version of MoMA's [film series](https://www.moma.org/calendar/film/5632) is anything to go by, bold color blocking isn't a dated design choice.
@@ -22,7 +24,7 @@ ALL CONTENTS IN THIS REPO ARE FOR EDUCATIONAL PURPOSES ONLY.
 
 ### Dependencies
 
-* Flask==2.2.5
+* Flask==2.3.2
 * flask_session==0.5.0
 
 ### Usage
@@ -78,8 +80,8 @@ echo $MAP_API_KEY
 New features development is ongoing.
 
 * Migrate to a Postgres database on AWS
-* Deploy Flask app with AWS Lightsail and/or AWS Elastic Beanstalk
-* Create CMS for user management and content creation and editing
+* Deploy Flask app on AWS Lightsail and/or AWS Elastic Beanstalk
+* Create CMS for user management and content creation and editing _(currently in alpha - see [repo](https://github.com/ggeerraarrdd/lafs-cms))_
 
 ## License
 
