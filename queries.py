@@ -67,7 +67,7 @@ def get_info_schedules(db, series_id):
     query = "SELECT strftime('%d', schedule) AS day, "
     query = query + "f.id, "
     query = query + "rtrim (substr ('January  February March    April    May      June     July     August   SeptemberOctober  November December', strftime ('%m', schedule) * 9 - 8, 9)) AS month, "
-    query = query + "film_title, film_director, film_year, film_runtime "
+    query = query + "film_title, film_director, film_year, film_runtime, wiki, sc.schedule, sc.notes "
     query = query + "FROM series AS se "
     query = query + "JOIN schedules AS sc ON se.series_id = sc.series_id "
     query = query + "JOIN films AS f ON sc.film_id = f.id "

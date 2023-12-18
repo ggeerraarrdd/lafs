@@ -121,13 +121,19 @@
                         </form>
 
                         <!-- Film Info -->
-                        <span style="font-size: 11px;">
-                            <span style="color: {{ series.color2 }};">
-                                (dir. {{ schedule.film_director }},
-                                {{ schedule.film_year }},
-                                {{ schedule.film_runtime }}min)<br>
-                            </span>
+                        <span style="font-size: 11px; color: {{ series.color2 }};">
+                            (dir. {{ schedule.film_director }},
+                            {{ schedule.film_year }},
+                            {{ schedule.film_runtime }}min)<br>
                         </span>
+                        {%- if schedule.notes %}
+                        <div class="bottom-container-film-notes" 
+                            style="border-left: 1px solid {{ series.color3 }}; color: {{ series.color3 }};">
+                                <br>
+                                {{ schedule.notes }}
+                        </div>
+                        {%- else %}
+                        {%- endif %}
                         <br>
                     </td>
                 </tr>
