@@ -4,15 +4,15 @@ An early aughts basic website recreated using modern tools
 
 ## Description
 
-_**NOTE:** The website now has a companion CMS in alpha. Check it out in its own [repo](https://github.com/ggeerraarrdd/lafs-cms)._
+_**NOTE:** The website now has a custom-made content management system (CMS) in alpha. Check it out in its own [repo](https://github.com/ggeerraarrdd/lafs-cms)._
 
 In the early aughts, I co-founded the _Landscape Architecture Film Series_ for the Department of Landscape Architecture at the University of Illinois Urbana/Champaign and for which I designed a website.
 
-In need of a website to use as a vehicle to play around with a few AWS services (see [Future Work](#future-work)) but not wanting to spend anytime to ideate and design a new one from scratch, I turned to my [old website](https://web.archive.org/web/20040827234527/http://www.rehearsal.uiuc.edu/projects/filmseries/). Its look and feel has aged well, I think, and indeed looks remarkably contemporary. For instance, if the current version of MoMA's [film series](https://www.moma.org/calendar/film/5632) is anything to go by, bold color blocking isn't a dated design choice.
+In need of a website to use as a vehicle to play around with a few AWS services (see [Future Work](#future-work)) but not wanting to spend anytime to ideate and design a new one from scratch, I turned to my [old website](https://web.archive.org/web/20040827234527/http://www.rehearsal.uiuc.edu/projects/filmseries/). Its look and feel has aged well, I think, and indeed looks remarkably contemporary. For instance, if the current version of MoMA's [film series](https://www.moma.org/calendar/film/) is anything to go by, bold color blocking isn't a dated design choice.
 
 This, then, is that 20-year-old static website ressurrected as a dynamic web application with a data model to speak of, using modern tools such Flask, SQLite, VS Code and Git.
 
-![Film Series](/static/images/film-series1_3.png)
+![Film Series](/static/images/film-series1.png)
 
 More screenshots below.
 
@@ -24,15 +24,15 @@ ALL CONTENTS IN THIS REPO ARE FOR EDUCATIONAL PURPOSES ONLY.
 
 ### Dependencies
 
-* Flask==2.3.2
-* flask_session==0.5.0
+* Flask==3.0.0
+* Werkzeug==3.0.1
 
 ### Usage
 
 Clone it!
 
 ```bash
-git clone https://github.com/ggeerraarrdd/geo50x.git
+git clone https://github.com/ggeerraarrdd/film-series.git
 ```
 
 Go into the project directory and run the command:
@@ -51,19 +51,13 @@ For the embedded maps to work, you need to use your own API Key. Before you can 
 * [Set up your Google Cloud project](https://developers.google.com/maps/documentation/javascript/cloud-setup)
 * [Using API Keys](https://developers.google.com/maps/documentation/javascript/get-api-key)
 
-In your terminal window, execute:
+Create an `.env` file in the root directory and then add:
 
-```bash
-export MAP_API_KEY=value
+```text
+MAP_API_KEY=value
 ```
 
 where `value` is your API key.
-
-Check to confirm if environmental variable is saved by executing
-
-```bash
-echo $MAP_API_KEY
-```
 
 ## Author(s)
 
@@ -77,15 +71,13 @@ echo $MAP_API_KEY
 
 ### Future Work
 
-New features development is ongoing.
+Improvements and new features development are ongoing.
 
-* Migrate to a Postgres database on AWS
-* Deploy Flask app on AWS Lightsail and/or AWS Elastic Beanstalk
 * Create CMS for user management and content creation and editing _(currently in alpha - see [repo](https://github.com/ggeerraarrdd/lafs-cms))_
 
 ## License
 
-* [MIT License](https://github.com/ggeerraarrdd/large-parks/blob/main/LICENSE)
+* [MIT License](https://github.com/ggeerraarrdd/film-series/blob/main/LICENSE)
 
 ## Acknowledgments
 
@@ -93,9 +85,9 @@ New features development is ongoing.
 
 ## Screenshots
 
-![Film Series](/static/images/film-series0_2.png "Landscape Architecture Film Series")*Image created using [Portfoliofy](https://github.com/ggeerraarrdd/portfoliofy).*
+![Film Series](/static/images/film-series0.png "Landscape Architecture Film Series")*Image created using [Portfoliofy](https://github.com/ggeerraarrdd/portfoliofy).*
 
-![Film Series](/static/images/film-series2_3.png "Landscape Architecture Film Series")
-![Film Series](/static/images/film-series3_3.png "Landscape Architecture Film Series")
-![Film Series](/static/images/film-series4_2.png "Landscape Architecture Film Series")
-![Film Series](/static/images/film-series5_2.png "Landscape Architecture Film Series")
+![Film Series](/static/images/film-series2.png "Landscape Architecture Film Series")
+![Film Series](/static/images/film-series3.png "Landscape Architecture Film Series")
+![Film Series](/static/images/film-series4.png "Landscape Architecture Film Series")
+![Film Series](/static/images/film-series5.png "Landscape Architecture Film Series")

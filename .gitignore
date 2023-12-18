@@ -169,7 +169,5 @@ cython_debug/
 flask_session/
 /*_session/
 
-films.txt
-local_settings.py
-
+zketch*
 ####################################################
