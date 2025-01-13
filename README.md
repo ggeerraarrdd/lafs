@@ -24,8 +24,7 @@ ALL CONTENTS IN THIS REPO ARE FOR EDUCATIONAL PURPOSES ONLY.
 
 ### Dependencies
 
-* Flask==3.0.0
-* Werkzeug==3.0.1
+* See `requirements.txt`
 
 ### Usage
 
@@ -58,6 +57,14 @@ MAP_API_KEY=value
 ```
 
 where `value` is your API key.
+
+### Database
+
+Also add the following to the `.env` file:
+
+```text
+DATABASE_NAME="lafs.db"
+```
 
 ## Author(s)
 
