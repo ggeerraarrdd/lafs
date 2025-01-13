@@ -18,16 +18,16 @@ app.config["SESSION_TYPE"] = "filesystem"
 
 Session(app)
 
-# Set env variables
-map_api_key = os.environ.get("MAP_API_KEY")
-
-# Set database
-DATABASE_NAME = "lafs.db"
+# Set constants
+MAP_API_KEY = os.environ.get("MAP_API_KEY_DEV")
+DATABASE_NAME = os.environ.get("DATABASE_NAME")
 
 
 @app.route("/", methods=["GET", "POST"])
 def index():
+    """TODO: function docstring """
 
+    print(MAP_API_KEY)
     if request.method == "POST":
         return redirect("/")
 
@@ -38,7 +38,7 @@ def index():
 
         # Update session
         session["active_series_id"] = session["current_series_id"] = query_result[0]
-        
+
         # NOTE: For development purposes, change current_series_id to first series, not actual current
         session["active_series_id"] = session["current_series_id"] = 1
 
@@ -48,34 +48,35 @@ def index():
         # Get info on [past] (1) series, (2) schedules, and (3) series ids
         series, schedules, series_ids = get_series_data(DATABASE_NAME, series_id)
 
-        return render_template("index.html", 
-                               series=series, 
-                               schedules=schedules, 
+        return render_template("index.html",
+                               series=series,
+                               schedules=schedules,
                                series_ids=series_ids)
 
 
 @app.route("/series", methods=["GET", "POST"])
 def series():
+    """TODO: function docstring """
 
     current_series_id = session["current_series_id"]
 
     if request.method == "POST":
 
-        # Get info of clicked series id 
+        # Get info of clicked series id
         series_id = int(request.form.get("series-id"))
 
         if series_id == current_series_id:
             return redirect("/")
         else:
-            # Update session variable active_series_id 
+            # Update session variable active_series_id
             session["active_series_id"] = series_id
 
             # Get info on [past] (1) series, (2) schedules, and (3) series ids
             series, schedules, series_ids = get_series_data(DATABASE_NAME, series_id)
-    
-        return render_template("index.html", 
-                               series=series, 
-                               schedules=schedules, 
+
+        return render_template("index.html",
+                               series=series,
+                               schedules=schedules,
                                series_ids=series_ids)
 
     else:
@@ -84,6 +85,7 @@ def series():
 
 @app.route("/film", methods=["GET", "POST"])
 def film():
+    """TODO: function docstring """
 
     if request.method == "POST":
         # Get info of [active] series id
@@ -99,34 +101,36 @@ def film():
         # Get info of requested film
         film = queries.get_info_film(DATABASE_NAME, film_id)
 
-        return render_template("film.html", 
-                               series=series, 
-                               schedules=schedules, 
-                               series_ids=series_ids, 
+        return render_template("film.html",
+                               series=series,
+                               schedules=schedules,
+                               series_ids=series_ids,
                                film=film)
 
     else:
         return redirect("/")
 
 
-@app.route("/map")
-def map():
-    
+@app.route("/location")
+def location():
+    """TODO: function docstring """
+
     # Get info of [active] series id
     series_id = session["active_series_id"]
 
     # Get info on [past] (1) series, (2) schedules, and (3) series ids
     series, schedules, series_ids = get_series_data(DATABASE_NAME, series_id)
 
-    return render_template("map.html", 
-                           series=series, 
-                           schedules=schedules, 
-                           series_ids=series_ids, 
-                           map_api_key=map_api_key)
+    return render_template("location.html",
+                           series=series,
+                           schedules=schedules,
+                           series_ids=series_ids,
+                           map_api_key=MAP_API_KEY)
 
 
 @app.route("/org")
 def org():
+    """TODO: function docstring """
 
     # Get info of [active] series id
     series_id = session["active_series_id"]
@@ -134,7 +138,7 @@ def org():
     # Get info on [past] (1) series, (2) schedules, and (3) series ids
     series, schedules, series_ids = get_series_data(DATABASE_NAME, series_id)
 
-    return render_template("org.html", 
-                           series=series, 
-                           schedules=schedules, 
+    return render_template("org.html",
+                           series=series,
+                           schedules=schedules,
                            series_ids=series_ids)
