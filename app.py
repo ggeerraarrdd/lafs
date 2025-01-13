@@ -64,12 +64,12 @@ def series_view():
 
         if series_id == current_series_id:
             return redirect("/")
-        else:
-            # Update session variable active_series_id
-            session["active_series_id"] = series_id
 
-            # Get info on [past] (1) series, (2) schedules, and (3) series ids
-            series, schedules, series_ids = get_series_data(DATABASE_NAME, series_id)
+        # Update session variable active_series_id
+        session["active_series_id"] = series_id
+
+        # Get info on [past] (1) series, (2) schedules, and (3) series ids
+        series, schedules, series_ids = get_series_data(DATABASE_NAME, series_id)
 
         return render_template("index.html",
                                series=series,
