@@ -1,7 +1,8 @@
 import os
 from flask import Flask, redirect, render_template, request, session
 from flask_session import Session
-import queries 
+from helpers import get_series_data
+import queries
 
 
 # Configure application
@@ -21,7 +22,7 @@ Session(app)
 map_api_key = os.environ.get("MAP_API_KEY")
 
 # Set database
-db = "lafs.db"
+DATABASE_NAME = "lafs.db"
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -33,11 +34,11 @@ def index():
     else:
 
         # Get info of [current] series id
-        query_result = queries.get_id_current_series(db)
-        
+        query_result = queries.get_id_current_series(DATABASE_NAME)
+
         # Update session
         session["active_series_id"] = session["current_series_id"] = query_result[0]
-
+        
         # NOTE: For development purposes, change current_series_id to first series, not actual current
         session["active_series_id"] = session["current_series_id"] = 1
 
@@ -45,9 +46,7 @@ def index():
         series_id = session["active_series_id"]
 
         # Get info on [past] (1) series, (2) schedules, and (3) series ids
-        series = queries.get_info_series(db, series_id)
-        schedules = queries.get_info_schedules(db, series_id)
-        series_ids = queries.get_info_series_ids(db)
+        series, schedules, series_ids = get_series_data(DATABASE_NAME, series_id)
 
         return render_template("index.html", 
                                series=series, 
@@ -72,10 +71,8 @@ def series():
             session["active_series_id"] = series_id
 
             # Get info on [past] (1) series, (2) schedules, and (3) series ids
-            series = queries.get_info_series(db, series_id)
-            schedules = queries.get_info_schedules(db, series_id)
-            series_ids = queries.get_info_series_ids(db)
-
+            series, schedules, series_ids = get_series_data(DATABASE_NAME, series_id)
+    
         return render_template("index.html", 
                                series=series, 
                                schedules=schedules, 
@@ -97,12 +94,10 @@ def film():
         film_id = request.form.get("film-id")
 
         # Get info on [past] (1) series, (2) schedules, and (3) series ids
-        series = queries.get_info_series(db, series_id)
-        schedules = queries.get_info_schedules(db, series_id)
-        series_ids = queries.get_info_series_ids(db)
+        series, schedules, series_ids = get_series_data(DATABASE_NAME, series_id)
 
         # Get info of requested film
-        film = queries.get_info_film(db, film_id)
+        film = queries.get_info_film(DATABASE_NAME, film_id)
 
         return render_template("film.html", 
                                series=series, 
@@ -120,10 +115,8 @@ def map():
     # Get info of [active] series id
     series_id = session["active_series_id"]
 
-    # Get info on [active] (1) series, (2) schedules, and (3) series ids
-    series = queries.get_info_series(db, series_id)
-    schedules = queries.get_info_schedules(db, series_id)
-    series_ids = queries.get_info_series_ids(db)
+    # Get info on [past] (1) series, (2) schedules, and (3) series ids
+    series, schedules, series_ids = get_series_data(DATABASE_NAME, series_id)
 
     return render_template("map.html", 
                            series=series, 
@@ -138,13 +131,10 @@ def org():
     # Get info of [active] series id
     series_id = session["active_series_id"]
 
-    # Get info on [active] (1) series, (2) schedules, and (3) series ids
-    series = queries.get_info_series(db, series_id)
-    schedules = queries.get_info_schedules(db, series_id)
-    series_ids = queries.get_info_series_ids(db)
+    # Get info on [past] (1) series, (2) schedules, and (3) series ids
+    series, schedules, series_ids = get_series_data(DATABASE_NAME, series_id)
 
     return render_template("org.html", 
                            series=series, 
                            schedules=schedules, 
                            series_ids=series_ids)
-
