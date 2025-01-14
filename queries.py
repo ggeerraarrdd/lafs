@@ -26,7 +26,7 @@ def get_id_current_series(db: str) -> int:
     cursor.close()
     connection.close()
 
-    return(current_series_id)
+    return current_series_id
 
 
 def get_info_series(db: str, series_id: int) -> Dict[str, Any]:
@@ -68,7 +68,7 @@ def get_info_series(db: str, series_id: int) -> Dict[str, Any]:
     cursor.close()
     connection.close()
 
-    return(dict(results))
+    return dict(results)
 
 
 def get_info_schedules(db: str, series_id: int) -> List[Dict[str, Any]]:
@@ -111,7 +111,7 @@ def get_info_schedules(db: str, series_id: int) -> List[Dict[str, Any]]:
     cursor.close()
     connection.close()
 
-    return(result)
+    return result
 
 
 def get_info_series_ids(db: str) -> List[Dict[str, Any]]:
@@ -142,7 +142,7 @@ def get_info_series_ids(db: str) -> List[Dict[str, Any]]:
     # Convert each row into a dictionary using zip
     result = [dict(zip(columns, row)) for row in rows]
 
-    return(result)
+    return result
 
 
 def get_info_serieses(db: str) -> List[Dict[str, Any]]:
@@ -177,7 +177,7 @@ def get_info_serieses(db: str) -> List[Dict[str, Any]]:
     # Convert each row into a dictionary using zip
     result = [dict(zip(columns, row)) for row in rows]
 
-    return(result)
+    return result
 
 
 def get_info_film(db: str, film_id: int) -> Dict[str, Any]:
@@ -208,4 +208,4 @@ def get_info_film(db: str, film_id: int) -> Dict[str, Any]:
     # Convert row into a dictionary
     result = dict(row)
 
-    return(result)
+    return result
