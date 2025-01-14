@@ -25,8 +25,22 @@ DATABASE_NAME = os.environ.get("DATABASE_NAME")
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    """TODO: function docstring """
+    """
+    Handle the index route for the application.
 
+    For GET requests:
+    - Retrieve the current series ID from the database.
+    - Update the session with the current series ID.
+    - For development purposes, set the current series ID to 1.
+    - Retrieve series data, schedules, and series IDs from the database.
+    - Render the index.html template with the retrieved data.
+
+    For POST requests:
+    - Redirect to the index route.
+
+    Returns:
+        Response: Flask response object containing a rendered HTML template or a redirect.
+    """
     if request.method == "POST":
         return redirect("/")
 
@@ -53,8 +67,22 @@ def index():
 
 @app.route("/series", methods=["GET", "POST"])
 def series_view():
-    """TODO: function docstring """
+    """
+    Handle the series view route for the application.
 
+    For GET requests:
+    - Redirect to the index route.
+
+    For POST requests:
+    - Retrieve the clicked series ID from the form.
+    - If the clicked series ID is the same as the current series ID, redirect to the index route.
+    - Update the session with the new active series ID.
+    - Retrieve series data, schedules, and series IDs from the database.
+    - Render the index.html template with the retrieved data.
+
+    Returns:
+        Response: Flask response object containing a rendered HTML template or a redirect.
+    """
     current_series_id = session["current_series_id"]
 
     if request.method == "POST":
@@ -81,8 +109,22 @@ def series_view():
 
 @app.route("/film", methods=["GET", "POST"])
 def film_view():
-    """TODO: function docstring """
+    """
+    Handle the series view route for the application.
 
+    For GET requests:
+    - Redirect to the index route.
+
+    For POST requests:
+    - Retrieve the clicked series ID from the form.
+    - If the clicked series ID is the same as the current series ID, redirect to the index route.
+    - Update the session with the new active series ID.
+    - Retrieve series data, schedules, and series IDs from the database.
+    - Render the index.html template with the retrieved data.
+
+    Returns:
+        Response: Flask response object containing a rendered HTML template or a redirect.
+    """
     if request.method == "POST":
         # Get info of [active] series id
         series_id = request.form.get("series-id")
@@ -108,8 +150,16 @@ def film_view():
 
 @app.route("/location")
 def location_view():
-    """TODO: function docstring """
+    """
+    Handle the location view route for the application.
 
+    - Retrieve the active series ID from the session.
+    - Retrieve series data, schedules, and series IDs from the database.
+    - Render the location.html template with the retrieved data and the map API key.
+
+    Returns:
+        Response: Flask response object containing a rendered HTML template.
+    """
     # Get info of [active] series id
     series_id = session["active_series_id"]
 
@@ -125,8 +175,16 @@ def location_view():
 
 @app.route("/org")
 def org_view():
-    """TODO: function docstring """
+    """
+    Handle the org view route for the application.
 
+    - Retrieve the active series ID from the session.
+    - Retrieve series data, schedules, and series IDs from the database.
+    - Render the org.html template with the retrieved data.
+
+    Returns:
+        Response: Flask response object containing a rendered HTML template.
+    """
     # Get info of [active] series id
     series_id = session["active_series_id"]
 
