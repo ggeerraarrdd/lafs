@@ -1,9 +1,17 @@
 import sqlite3
+from typing import Dict, Any, List
 
 
-def get_id_current_series(db):
-    """Get id of current film series."""
+def get_id_current_series(db: str) -> int:
+    """
+    Fetch the ID of the current film series.
 
+    Args:
+        db (str): Name of the database to query.
+
+    Returns:
+        int: ID of the current film series.
+    """
     # Create connection and cursor
     connection = sqlite3.connect(db, check_same_thread=False)
     connection.row_factory = sqlite3.Row
@@ -21,9 +29,17 @@ def get_id_current_series(db):
     return(current_series_id)
 
 
-def get_info_series(db, series_id):
-    """Get info of series."""
+def get_info_series(db: str, series_id: int) -> Dict[str, Any]:
+    """
+    Fetch information about a specific series.
 
+    Args:
+        db (str): Name of the database to query.
+        series_id (int): ID of the series to fetch.
+
+    Returns:
+        Dict[str, Any]: Information about the series.
+    """
     # Create connection and cursor
     connection = sqlite3.connect(db, check_same_thread=False)
     connection.row_factory = sqlite3.Row
@@ -55,9 +71,17 @@ def get_info_series(db, series_id):
     return(dict(results))
 
 
-def get_info_schedules(db, series_id):
-    """Get info of series schedules."""
+def get_info_schedules(db: str, series_id: int) -> List[Dict[str, Any]]:
+    """
+    Fetch information about the schedules of a specific series.
 
+    Args:
+        db (str): Name of the database to query.
+        series_id (int): ID of the series to fetch schedules for.
+
+    Returns:
+        List[Dict[str, Any]]: A list of dictionaries containing schedule information.
+    """
     # Create connection and cursor
     connection = sqlite3.connect(db, check_same_thread=False)
     connection.row_factory = sqlite3.Row
@@ -90,9 +114,16 @@ def get_info_schedules(db, series_id):
     return(result)
 
 
-def get_info_series_ids(db):
-    """Get info of series ids."""
+def get_info_series_ids(db: str) -> List[Dict[str, Any]]:
+    """
+    Fetch information of all series IDs.
 
+    Args:
+        db (str): Name of the database to query.
+
+    Returns:
+        List[Dict[str, Any]]: A list of dictionaries containing series ID information.
+    """
     # Create connection and cursor
     connection = sqlite3.connect(db, check_same_thread=False)
     connection.row_factory = sqlite3.Row
@@ -114,9 +145,16 @@ def get_info_series_ids(db):
     return(result)
 
 
-def get_info_serieses(db):
-    """Get info of series ids."""
+def get_info_serieses(db: str) -> List[Dict[str, Any]]:
+    """
+    Fetch information of all series IDs.
 
+    Args:
+        db (str): Name of the database to query.
+
+    Returns:
+        List[Dict[str, Any]]: A list of dictionaries containing series ID information.
+    """
     # Create connection and cursor
     connection = sqlite3.connect(db, check_same_thread=False)
     connection.row_factory = sqlite3.Row
@@ -142,9 +180,17 @@ def get_info_serieses(db):
     return(result)
 
 
-def get_info_film(db, film_id):
-    """Get info of film."""
+def get_info_film(db: str, film_id: int) -> Dict[str, Any]:
+    """
+    Fetch information about a specific film.
 
+    Args:
+        db (str): Name of the database to query.
+        film_id (int): ID of the film to fetch.
+
+    Returns:
+        Dict[str, Any]: Information about the film.
+    """
     # Create connection and cursor
     connection = sqlite3.connect(db, check_same_thread=False)
     connection.row_factory = sqlite3.Row
@@ -163,6 +209,3 @@ def get_info_film(db, film_id):
     result = dict(row)
 
     return(result)
-
-
-
