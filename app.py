@@ -1,8 +1,15 @@
+# Python Standard Library
 import os
+
+# Third-Party Libraries
 from flask import Flask, redirect, render_template, request, session
 from flask_session import Session
+
+# Local Libraries
 from helpers import get_series_data
 import queries
+
+
 
 
 # Configure application

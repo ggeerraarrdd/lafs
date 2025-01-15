@@ -1,6 +1,13 @@
+# Python Standard Library
 from typing import Tuple, List, Dict
+
+# Third-Party Libraries
 from flask import render_template
+
+# Local Libraries
 import queries
+
+
 
 
 def get_series_data(db: str, series_id: int) -> Tuple[Dict, List, List]:
