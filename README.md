@@ -10,7 +10,7 @@ In the early aughts, I co-founded the _Landscape Architecture Film Series_ for t
 
 In need of a website to use as a vehicle to play around with a few AWS services (see [Future Work](#future-work)) but not wanting to spend anytime to ideate and design a new one from scratch, I turned to my [old website](https://web.archive.org/web/20040827234527/http://www.rehearsal.uiuc.edu/projects/filmseries/). Its look and feel has aged well, I think, and indeed looks remarkably contemporary. For instance, if the current version of MoMA's [film series](https://www.moma.org/calendar/film/) is anything to go by, bold color blocking isn't a dated design choice.
 
-This, then, is that 20-year-old static website ressurrected as a dynamic web application with a data model to speak of, using modern tools such Flask, SQLite, VS Code and Git.
+This, then, is that 20-year-old static website resurrected as a dynamic web application with a data model to speak of, using modern tools such as Flask, SQLite, VS Code and Git.
 
 ![Film Series](/docs/images/film-series1_2.jpg "Landscape Architecture Film Series")
 
@@ -118,6 +118,6 @@ Improvements and new features development are ongoing.
 ![Film Series](/docs/images/film-series0_2.png "Landscape Architecture Film Series")_Image created using [Portfoliofy](https://github.com/ggeerraarrdd/portfoliofy)._
 
 ![Film Series](/docs/images/film-series2_2.jpg "Landscape Architecture Film Series")
-![Film Series](/docs/images/film-series3_2.png "Landscape Architecture Film Series")
+![Film Series](/docs/images/film-series3_2.jpg "Landscape Architecture Film Series")
 ![Film Series](/docs/images/film-series4_2.png "Landscape Architecture Film Series")
 ![Film Series](/docs/images/film-series5_2.png "Landscape Architecture Film Series")
