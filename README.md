@@ -4,7 +4,7 @@ An early aughts basic website recreated using modern tools
 
 ## Description
 
-_**NOTE:** The website now has a custom-made content management system (CMS) in alpha. Check it out in its own [repo](https://github.com/ggeerraarrdd/lafs-cms)._
+_**NOTE:** The website now has a custom-made Content Management System (CMS) in alpha. Check it out in its own [repo](https://github.com/ggeerraarrdd/lafs-cms)._
 
 In the early aughts, I co-founded the _Landscape Architecture Film Series_ for the Department of Landscape Architecture at the University of Illinois Urbana/Champaign and for which I designed a website.
 
@@ -26,45 +26,68 @@ ALL CONTENTS IN THIS REPO ARE FOR EDUCATIONAL PURPOSES ONLY.
 
 * See `requirements.txt`
 
+### Installation
+
+1. **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/ggeerraarrdd/film-series.git
+    ```
+
+2. **Navigate into the project directory:**
+
+    ```bash
+    cd film-series # For example
+    ```
+
+3. **Create and activate a virtual environment:**
+
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
+
+4. **Install the dependencies:**
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+5. **Create an `.env` file and set the environment variables:**
+
+    Create a file named `.env` in the `app` directory of the project and add the following variables:
+
+    ```properties
+    SECRET_KEY=your_secret_key
+    MAP_API_KEY=your_map_api_key
+    DATABASE_NAME="lafs.db"
+    ```
+
+    Replace `your_secret_key` (see #6 below) and `your_map_api_key` (see # 7 below) with your actual secret key and API key.
+
+6. **Notes on Flask Secret Keys:**
+
+    TODO
+
+7. **Notes on Google Maps API Keys:**
+
+    For the embedded map to work, you need to set up your own API Key. Before you can create one, you will need to create a Google Cloud project, for which you need a Google Cloud account.
+
+    * [Set up a Google Cloud account](https://cloud.google.com)
+    * [Set up your Google Cloud project](https://developers.google.com/maps/documentation/javascript/cloud-setup)
+    * [Using API Keys](https://developers.google.com/maps/documentation/javascript/get-api-key)
+
 ### Usage
 
-Clone it!
+1. **Go into the app directory and run the command:**
 
-```bash
-git clone https://github.com/ggeerraarrdd/film-series.git
-```
+    ```bash
+    flask run
+    ```
 
-Go into the project directory and run the command:
+2. **Open the film series website:**
 
-```bash
-flask run
-```
-
-Open the URL after 'Running on'.
-
-### Notes on Google Maps
-
-For the embedded maps to work, you need to use your own API Key. Before you can create one, you will need to create a Google Cloud project, for which you need a Google Cloud account.
-
-* [Set up a Google Cloud account](https://cloud.google.com)
-* [Set up your Google Cloud project](https://developers.google.com/maps/documentation/javascript/cloud-setup)
-* [Using API Keys](https://developers.google.com/maps/documentation/javascript/get-api-key)
-
-Create an `.env` file in the root directory and then add:
-
-```text
-MAP_API_KEY=value
-```
-
-where `value` is your API key.
-
-### Database
-
-Also add the following to the `.env` file:
-
-```text
-DATABASE_NAME="lafs.db"
-```
+    Copy and open the URL displayed after 'Running on' in the terminal.
 
 ## Author(s)
 
@@ -92,7 +115,7 @@ Improvements and new features development are ongoing.
 
 ## Screenshots
 
-![Film Series](/static/images/film-series0.png "Landscape Architecture Film Series")_Image created using [Portfoliofy](https://github.com/ggeerraarrdd/portfoliofy)._
+![Film Series](/docs/images/film-series0_2.png "Landscape Architecture Film Series")_Image created using [Portfoliofy](https://github.com/ggeerraarrdd/portfoliofy)._
 
 ![Film Series](/docs/images/film-series2_2.jpg "Landscape Architecture Film Series")
 ![Film Series](/docs/images/film-series3_2.png "Landscape Architecture Film Series")
