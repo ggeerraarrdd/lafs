@@ -5,6 +5,7 @@ from typing import Dict, Any, List
 
 
 
+
 def get_id_current_series(db: str) -> int:
     """
     Fetch the ID of the current film series.

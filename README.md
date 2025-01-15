@@ -12,7 +12,7 @@ In need of a website to use as a vehicle to play around with a few AWS services 
 
 This, then, is that 20-year-old static website ressurrected as a dynamic web application with a data model to speak of, using modern tools such Flask, SQLite, VS Code and Git.
 
-![Film Series](/static/images/film-series1.png)
+![Film Series](/docs/images/film-series1_2.jpg "Landscape Architecture Film Series")
 
 More screenshots below.
 
@@ -92,9 +92,9 @@ Improvements and new features development are ongoing.
 
 ## Screenshots
 
-![Film Series](/static/images/film-series0.png "Landscape Architecture Film Series")*Image created using [Portfoliofy](https://github.com/ggeerraarrdd/portfoliofy).*
+![Film Series](/static/images/film-series0.png "Landscape Architecture Film Series")_Image created using [Portfoliofy](https://github.com/ggeerraarrdd/portfoliofy)._
 
-![Film Series](/static/images/film-series2.png "Landscape Architecture Film Series")
-![Film Series](/static/images/film-series3.png "Landscape Architecture Film Series")
-![Film Series](/static/images/film-series4.png "Landscape Architecture Film Series")
-![Film Series](/static/images/film-series5.png "Landscape Architecture Film Series")
+![Film Series](/docs/images/film-series2_2.jpg "Landscape Architecture Film Series")
+![Film Series](/docs/images/film-series3_2.png "Landscape Architecture Film Series")
+![Film Series](/docs/images/film-series4_2.png "Landscape Architecture Film Series")
+![Film Series](/docs/images/film-series5_2.png "Landscape Architecture Film Series")

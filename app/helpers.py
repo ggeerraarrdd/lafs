@@ -10,6 +10,7 @@ import queries
 
 
 
+
 def get_series_data(db: str, series_id: int) -> Tuple[Dict, List, List]:
     """Helper function to fetch series data from database.
     

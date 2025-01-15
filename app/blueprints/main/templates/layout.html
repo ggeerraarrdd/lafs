@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta name="description" content="Archive for the website of the Landscape Architecture Film Series @ UIUC (2002-1010)"/>
     <meta name="viewport" content="initial-scale=1, width=device-width">
-    <link href="/static/favicon.ico" rel="icon">
-    <link href="/static/styles.css" rel="stylesheet">
+    <link href="{{ url_for('main_bp.static', filename='favicon.ico') }}" rel="icon">
+    <link href="{{ url_for('main_bp.static', filename='styles.css') }}" rel="stylesheet">
     {%- block location %}{% endblock %}
     <title>
         Landscape Architecture Film Series @ UIUC — {% block title %}{% endblock %}

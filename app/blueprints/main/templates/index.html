@@ -10,7 +10,7 @@
             <span style="color: {{ series.color3 }};">
                 {{ series.series_brief.upper() }} 
                 {%- if series.series_poster_url %}
-                <a href="{{ series.series_poster_url }}" style="color: {{ series.color3 }};" target="_blank" rel="noopener noreferrer">POSTER</a>
+                <a href="{{ url_for('main_bp.static', filename='images/1_poster_anxiousterrains.jpg') }}" style="color: {{ series.color3 }};" target="_blank" rel="noopener noreferrer">POSTER</a>
                 {%- endif %}
             </span>
 

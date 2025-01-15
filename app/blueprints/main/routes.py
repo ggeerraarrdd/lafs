@@ -2,35 +2,26 @@
 import os
 
 # Third-Party Libraries
-from flask import Flask, redirect, render_template, request, session
-from flask_session import Session
+from flask import Blueprint
+from flask import redirect
+from flask import render_template
+from flask import request
+from flask import session
 
-# Local Libraries
+# Local
 from helpers import get_series_data
 import queries
+from . import main_bp
 
 
 
-
-# Configure application
-app = Flask(__name__)
-app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
-
-app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
-app.config['TEMPLATES_AUTO_RELOAD'] = True
-
-# Configure session to use filesystem (instead of signed cookies)
-app.config["SESSION_PERMANENT"] = False
-app.config["SESSION_TYPE"] = "filesystem"
-
-Session(app)
 
 # Set constants
 MAP_API_KEY = os.environ.get("MAP_API_KEY")
 DATABASE_NAME = os.environ.get("DATABASE_NAME")
 
 
-@app.route("/", methods=["GET", "POST"])
+@main_bp.route("/", methods=["GET", "POST"])
 def index():
     """
     Handle the index route for the application.
@@ -72,7 +63,7 @@ def index():
                             series_ids=series_ids)
 
 
-@app.route("/series", methods=["GET", "POST"])
+@main_bp.route("/series", methods=["GET", "POST"])
 def series_view():
     """
     Handle the series view route for the application.
@@ -114,7 +105,7 @@ def series_view():
     return redirect("/")
 
 
-@app.route("/film", methods=["GET", "POST"])
+@main_bp.route("/film", methods=["GET", "POST"])
 def film_view():
     """
     Handle the series view route for the application.
@@ -155,7 +146,7 @@ def film_view():
     return redirect("/")
 
 
-@app.route("/location")
+@main_bp.route("/location")
 def location_view():
     """
     Handle the location view route for the application.
@@ -180,7 +171,7 @@ def location_view():
                            map_api_key=MAP_API_KEY)
 
 
-@app.route("/org")
+@main_bp.route("/org")
 def org_view():
     """
     Handle the org view route for the application.
