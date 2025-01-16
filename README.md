@@ -4,7 +4,8 @@ An early aughts basic website recreated using modern tools
 
 ## Description
 
-_**NOTE:** The website now has a custom-made Content Management System (CMS) in alpha. Check it out in its own [repo](https://github.com/ggeerraarrdd/lafs-cms)._
+> [!NOTE]
+> A custom-made Content Management System (CMS) for the website is in development. Check it out in its own [repo](https://github.com/ggeerraarrdd/lafs-cms).
 
 In the early aughts, I co-founded the _Landscape Architecture Film Series_ for the Department of Landscape Architecture at the University of Illinois Urbana/Champaign and for which I designed a website.
 
