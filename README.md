@@ -5,7 +5,7 @@ An early aughts basic website recreated using modern tools
 ## Description
 
 > [!NOTE]
-> A custom-made Content Management System (CMS) for the website is in development. Check it out in its own [repo](https://github.com/ggeerraarrdd/lafs-cms).
+> ALL CONTENTS IN THIS REPO ARE FOR EDUCATIONAL PURPOSES ONLY.
 
 In the early aughts, I co-founded the _Landscape Architecture Film Series_ for the Department of Landscape Architecture at the University of Illinois Urbana/Champaign and for which I designed a website.
 
@@ -13,13 +13,47 @@ In need of a website to use as a vehicle to play around with a few AWS services 
 
 This, then, is that 20-year-old static website resurrected as a dynamic web application with a data model to speak of, using modern tools such as Flask, SQLite, VS Code and Git.
 
+_*Note* A custom-made Content Management System (CMS) for the website is in development. Check it out in its own [repo](https://github.com/ggeerraarrdd/lafs-cms)._
+
 ![Film Series](/docs/images/film-series1_2.jpg "Landscape Architecture Film Series")
 
 More screenshots below.
 
-## Disclaimer
+## Table of Contents
 
-ALL CONTENTS IN THIS REPO ARE FOR EDUCATIONAL PURPOSES ONLY.
+* [Description](#description)
+* [Features](#features)
+* [Project Structure](#project-structure)
+* [Prerequisites](#prerequisites)
+* [Getting Started](#getting-started)
+  * [Dependencies](#dependencies)
+  * [Installation](#installation)
+  * [Usage](#usage)
+* [Author(s)](#authors)
+* [Version History](#version-history)
+  * [Release Notes](#release-notes)
+  * [Initial Release](#initial-release)
+* [Future Work](#future-work)
+* [License](#license)
+* [Acknowledgments](#acknowledgments)
+* [Screenshots](#screenshots)
+
+## Features
+
+* Dynamic web application built with Flask and SQLite
+* Modern development tools integration (VS Code, Git)
+* Historical archive of a student-led film series website from the early 2000s
+* Recreated film database preserving information about past screenings
+* Google Maps integration for historical location reference
+* Mobile-responsive design preserving original color blocking aesthetic
+
+## Project Structure
+
+TODO
+
+## Prerequisites
+
+TODO
 
 ## Getting Started
 
@@ -100,7 +134,11 @@ ALL CONTENTS IN THIS REPO ARE FOR EDUCATIONAL PURPOSES ONLY.
 
 * See [https://github.com/ggeerraarrdd/film-series/releases](https://github.com/ggeerraarrdd/film-series/releases)
 
-### Future Work
+### Initial Release
+
+The [original website](https://web.archive.org/web/20040827234527/http://www.rehearsal.uiuc.edu/projects/filmseries/) is archived on the Internet Archive.
+
+## Future Work
 
 Improvements and new features development are ongoing.
 
