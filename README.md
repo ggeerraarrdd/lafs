@@ -42,12 +42,12 @@ More screenshots below.
 
 ## Features
 
-* Dynamic web application built with Flask and SQLite
-* Modern development tools integration
-* Historical archive of a student-led film series website from the early 2000s
-* Recreated film database preserving information about past screenings
-* Google Maps integration for historical location reference
-* Mobile-responsive design preserving original color blocking aesthetic
+* 🌐 Dynamic web application built with Flask and SQLite
+* 🛠️ Modern development tools integration
+* 📚 Historical archive of a student-led film series website from the early 2000s
+* 🎬 Recreated film database preserving information about past screenings
+* 🗺️ Google Maps integration for historical location reference
+* 📱 Mobile-responsive design preserving original color blocking aesthetic
 
 ## Project Structure
 
@@ -101,20 +101,20 @@ TODO
 
 ### Installation
 
-1. **Clone the repository:**
+1. **Clone the repository**
 
     ```bash
     git clone https://github.com/ggeerraarrdd/film-series.git
     ```
 
-2. **Create and activate a virtual environment:**
+2. **Create and activate a virtual environment**
 
     ```bash
     python -m venv venv
     source venv/bin/activate  # On Windows use `venv\Scripts\activate`
     ```
 
-3. **Install the dependencies:**
+3. **Install the dependencies**
 
     ```bash
     pip install -r requirements.txt
@@ -122,7 +122,7 @@ TODO
 
 ### Configuration
 
-1. **Create an `.env` file:**
+1. **Create an `.env` file**
 
     Place the file in the root directory and add the following as default:
 
@@ -131,10 +131,10 @@ TODO
     DATABASE_NAME='data/lafs.db'
 
     # Database Connection Pool
-    POOL_SIZE=15
-    MAX_OVERFLOW=5
+    POOL_SIZE=5
+    MAX_OVERFLOW=10
     POOL_TIMEOUT=30
-    POOL_RECYCLE=1800
+    POOL_RECYCLE=-1
     ECHO=False
 
     # Database Retry Settings
@@ -196,7 +196,7 @@ TODO
     flask run
     ```
 
-2. **Open the film series website:**
+2. **Open the film series website**
 
     Copy and open the URL displayed after 'Running on' in the terminal.
 
@@ -226,7 +226,7 @@ Improvements and new features development are ongoing.
 
 ## Contributing
 
-* TBD
+This project is not accepting contributions at this time. It is intended solely for personal learning and exploration. However, feel free to clone the repository and use it as a learning resource.
 
 ## Acknowledgments
 
