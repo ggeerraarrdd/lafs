@@ -28,6 +28,7 @@ More screenshots below.
 * [Getting Started](#getting-started)
   * [Dependencies](#dependencies)
   * [Installation](#installation)
+  * [Configuration](#configuration)
   * [Usage](#usage)
 * [Author(s)](#authors)
 * [Version History](#version-history)
@@ -35,6 +36,7 @@ More screenshots below.
   * [Initial Release](#initial-release)
 * [Future Work](#future-work)
 * [License](#license)
+* [Contributing](#contributing)
 * [Acknowledgments](#acknowledgments)
 * [Screenshots](#screenshots)
 
@@ -49,7 +51,43 @@ More screenshots below.
 
 ## Project Structure
 
-TODO
+```text
+film-series/
+│
+├── app/
+│   │
+│   ├── blueprints/
+│   │   │
+│   │   └── main/
+│   │       ├── __init__.py
+│   │       ├── routes.py
+│   │       ├── static/
+│   │       └── templates/
+│   │
+│   ├── config/
+│   │   └── __init__.py
+│   │
+│   ├── crud/
+│   │   └── __init__.py
+│   │
+│   ├── data/
+│   │   └── lafs.db
+│   │
+│   ├── infra/
+│   │   └── __init__.py
+│   │
+│   ├── utils/
+│   │   └── __init__.py
+│   │
+│   └── app.py
+│
+├── docs/
+├── logs/
+├── .gitignore
+├── LICENSE
+├── README.md
+└── requirements.txt
+```
 
 ## Prerequisites
 
@@ -112,6 +150,10 @@ TODO
     * [Set up your Google Cloud project](https://developers.google.com/maps/documentation/javascript/cloud-setup)
     * [Using API Keys](https://developers.google.com/maps/documentation/javascript/get-api-key)
 
+### Configuration
+
+* TBD
+
 ### Usage
 
 1. **Go into the app directory and run the command:**
@@ -148,6 +190,10 @@ Improvements and new features development are ongoing.
 
 * [MIT License](https://github.com/ggeerraarrdd/film-series/blob/main/LICENSE)
 
+## Contributing
+
+* TBD
+
 ## Acknowledgments
 
 * The distribution code for CS50's [Finance pset](https://cs50.harvard.edu/x/2023/psets/9/finance/) served as a template for the app.
@@ -160,3 +206,7 @@ Improvements and new features development are ongoing.
 ![Film Series](/docs/images/film-series3_2.jpg "Landscape Architecture Film Series")
 ![Film Series](/docs/images/film-series4_2.png "Landscape Architecture Film Series")
 ![Film Series](/docs/images/film-series5_2.png "Landscape Architecture Film Series")
+
+## Frontispiece
+
+* TBD

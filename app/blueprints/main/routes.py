@@ -1,24 +1,60 @@
+"""
+TD
+"""
+
 # Python Standard Library
-import os
+from typing import Tuple, List, Dict
 
 # Third-Party Libraries
-from flask import Blueprint
 from flask import redirect
 from flask import render_template
 from flask import request
 from flask import session
+from flask import Blueprint
 
 # Local
-from helpers import get_series_data
-import queries
-from . import main_bp
+from app.config import MAP_API_KEY
+from app.crud import get_id_current_series
+from app.crud import get_info_film
+from app.crud import get_info_series
+from app.crud import get_info_schedules
+from app.crud import get_info_series_ids
 
 
 
 
-# Set constants
-MAP_API_KEY = os.environ.get("MAP_API_KEY")
-DATABASE_NAME = os.environ.get("DATABASE_NAME")
+
+
+
+
+
+
+main_bp = Blueprint('main_bp',
+                    __name__,
+                    static_folder='static',
+                    static_url_path='/main/static',
+                    template_folder='templates')
+
+
+def get_series_data(series_id: int) -> Tuple[Dict, List, List]:
+    """
+    Helper function to fetch series data from database.
+    
+    Args:
+        db (str): Name of the database to query.
+        series_id (int): ID of the series to fetch.
+
+    Returns:
+        Tuple[Dict, List, List]: A tuple containing:
+            - series (Dict): Information about the series.
+            - schedules (List): List of schedules for the series.
+            - series_ids (List): List of all series IDs.
+    """
+    series = get_info_series(series_id)
+    schedules = get_info_schedules(series_id)
+    series_ids = get_info_series_ids()
+
+    return series, schedules, series_ids
 
 
 @main_bp.route("/", methods=["GET", "POST"])
@@ -43,10 +79,10 @@ def index():
         return redirect("/")
 
     # Get info of [current] series id
-    query_result = queries.get_id_current_series(DATABASE_NAME)
+    query_result = get_id_current_series()
 
     # Update session
-    session["active_series_id"] = session["current_series_id"] = query_result[0]
+    session["active_series_id"] = session["current_series_id"] = query_result
 
     # NOTE: For development purposes, change current_series_id to first series, not actual current
     session["active_series_id"] = session["current_series_id"] = 1
@@ -55,7 +91,7 @@ def index():
     series_id = session["active_series_id"]
 
     # Get info on [past] (1) series, (2) schedules, and (3) series ids
-    series, schedules, series_ids = get_series_data(DATABASE_NAME, series_id)
+    series, schedules, series_ids = get_series_data(series_id)
 
     return render_template("index.html",
                             series=series,
@@ -95,7 +131,7 @@ def series_view():
         session["active_series_id"] = series_id
 
         # Get info on [past] (1) series, (2) schedules, and (3) series ids
-        series, schedules, series_ids = get_series_data(DATABASE_NAME, series_id)
+        series, schedules, series_ids = get_series_data(series_id)
 
         return render_template("index.html",
                                series=series,
@@ -132,10 +168,10 @@ def film_view():
         film_id = request.form.get("film-id")
 
         # Get info on [past] (1) series, (2) schedules, and (3) series ids
-        series, schedules, series_ids = get_series_data(DATABASE_NAME, series_id)
+        series, schedules, series_ids = get_series_data(series_id)
 
         # Get info of requested film
-        film = queries.get_info_film(DATABASE_NAME, film_id)
+        film = get_info_film(film_id)
 
         return render_template("film.html",
                                series=series,
@@ -162,7 +198,7 @@ def location_view():
     series_id = session["active_series_id"]
 
     # Get info on [past] (1) series, (2) schedules, and (3) series ids
-    series, schedules, series_ids = get_series_data(DATABASE_NAME, series_id)
+    series, schedules, series_ids = get_series_data(series_id)
 
     return render_template("location.html",
                            series=series,
@@ -187,7 +223,7 @@ def org_view():
     series_id = session["active_series_id"]
 
     # Get info on [past] (1) series, (2) schedules, and (3) series ids
-    series, schedules, series_ids = get_series_data(DATABASE_NAME, series_id)
+    series, schedules, series_ids = get_series_data(series_id)
 
     return render_template("org.html",
                            series=series,

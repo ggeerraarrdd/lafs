@@ -1,3 +1,31 @@
+"""
+Landscape Architecture Film Series (LAFS) Web Application
+
+This Flask application serves as a digital archive and repository of past
+installments of LAFS. It preserves and provides access to:
+
+- Historical film series records and documentation
+- Past film details and schedule information
+- Archive of series data and materials
+- Historical venue locations with map visualization
+
+The application is deployed on AWS and can be accessed at https://l-a-f-s.org/.
+
+Architecture:
+- Flask web framework with filesystem session storage
+- SQLite database with SQLAlchemy ORM
+- Google Maps Platform integration
+- Modular blueprint structure
+
+Configuration:
+- Environment variables for sensitive settings (SECRET_KEY, MAP_API_KEY)
+- Development-friendly defaults (template auto-reload, disabled caching)
+- File-based session storage for improved security
+
+The application uses blueprints to organize routes and functionality:
+- main_bp: Core public-facing routes and views
+"""
+
 # Python Standard Library
 import os
 
@@ -5,9 +33,13 @@ import os
 from flask import Flask
 from flask_session import Session
 
-# Local Libraries
-from blueprints.main.routes import main_bp
-# from blueprints.cms.routes import cms_bp # Uncomment this line to enable CMS
+# Local
+from app.blueprints.main.routes import main_bp
+
+
+
+
+
 
 
 
@@ -32,4 +64,3 @@ Session(app)
 
 # Register blueprints for main and cms routes
 app.register_blueprint(main_bp)
-# app.register_blueprint(cms_bp) # Uncomment this line to enable CMS
