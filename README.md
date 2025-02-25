@@ -43,7 +43,7 @@ More screenshots below.
 ## Features
 
 * Dynamic web application built with Flask and SQLite
-* Modern development tools integration (VS Code, Git)
+* Modern development tools integration
 * Historical archive of a student-led film series website from the early 2000s
 * Recreated film database preserving information about past screenings
 * Google Maps integration for historical location reference
@@ -107,56 +107,90 @@ TODO
     git clone https://github.com/ggeerraarrdd/film-series.git
     ```
 
-2. **Navigate into the project directory:**
-
-    ```bash
-    cd film-series # For example
-    ```
-
-3. **Create and activate a virtual environment:**
+2. **Create and activate a virtual environment:**
 
     ```bash
     python -m venv venv
     source venv/bin/activate  # On Windows use `venv\Scripts\activate`
     ```
 
-4. **Install the dependencies:**
+3. **Install the dependencies:**
 
     ```bash
     pip install -r requirements.txt
     ```
 
-5. **Create an `.env` file and set the environment variables:**
+### Configuration
 
-    Create a file named `.env` in the `app` directory of the project and add the following variables:
+1. **Create an `.env` file:**
 
-    ```properties
-    SECRET_KEY=your_secret_key
-    MAP_API_KEY=your_map_api_key
-    DATABASE_NAME="lafs.db"
+    Place the file in the root directory and add the following as default:
+
+    ```python
+    # Database Path
+    DATABASE_NAME='data/lafs.db'
+
+    # Database Connection Pool
+    POOL_SIZE=15
+    MAX_OVERFLOW=5
+    POOL_TIMEOUT=30
+    POOL_RECYCLE=1800
+    ECHO=False
+
+    # Database Retry Settings
+    MAX_RETRIES=3
+    BASE_DELAY=1
+    MAX_DELAY=10
+
+    # Flask Secret Key
+    SECRET_KEY='your_flask_secret_key'
+
+    # Google Maps API Key
+    MAP_API_KEY='your_map_api_key'
     ```
 
-    Replace `your_secret_key` (see #6 below) and `your_map_api_key` (see # 7 below) with your actual secret key and API key.
+2. **Database**
 
-6. **Notes on Flask Secret Keys:**
+    ```python
+    # Database Path
+    DATABASE_NAME='data/lafs.db'  # Path to SQLite database file
 
-    TODO
+    # Database Connection Pool
+    POOL_SIZE=15   # Max number of persistent connections
+    MAX_OVERFLOW=5  # Max number of connections above POOL_SIZE
+    POOL_TIMEOUT=30  # Seconds to wait for available connection
+    POOL_RECYCLE=1800  # Seconds before connection is recycled
+    ECHO=False  # Enable SQLAlchemy engine logging
 
-7. **Notes on Google Maps API Keys:**
+    # Database Retry Settings
+    MAX_RETRIES=3  #  Max retry attempts for failed operations
+    BASE_DELAY=1  # Initial delay between retries in seconds
+    MAX_DELAY=10  # Max delay between retries in seconds
+    ```
 
-    For the embedded map to work, you need to set up your own API Key. Before you can create one, you will need to create a Google Cloud project, for which you need a Google Cloud account.
+3. **Flask Secret Key**
+
+    ```python
+    # Flask Secret Key
+    SECRET_KEY='your_flask_secret_key'
+    ```
+
+4. **Google Maps API Key**
+
+    ```python
+    # Google Maps API Key
+    MAP_API_KEY='your_map_api_key'
+    ```
+
+    An API Key is needed for the embedded map to work. Before you can create one, you will need to create a Google Cloud project, for which you need a Google Cloud account.
 
     * [Set up a Google Cloud account](https://cloud.google.com)
     * [Set up your Google Cloud project](https://developers.google.com/maps/documentation/javascript/cloud-setup)
     * [Using API Keys](https://developers.google.com/maps/documentation/javascript/get-api-key)
 
-### Configuration
-
-* TBD
-
 ### Usage
 
-1. **Go into the app directory and run the command:**
+1. **Go into the `app` directory and run the command:**
 
     ```bash
     flask run
@@ -200,7 +234,8 @@ Improvements and new features development are ongoing.
 
 ## Screenshots
 
-![Film Series](/docs/images/film-series0_2.png "Landscape Architecture Film Series")_Image created using [Portfoliofy](https://github.com/ggeerraarrdd/portfoliofy)._
+![Film Series](/docs/images/film-series0_2.png "Landscape Architecture Film Series")
+_(Image created using [Portfoliofy](https://github.com/ggeerraarrdd/portfoliofy).)_
 
 ![Film Series](/docs/images/film-series2_2.jpg "Landscape Architecture Film Series")
 ![Film Series](/docs/images/film-series3_2.jpg "Landscape Architecture Film Series")
