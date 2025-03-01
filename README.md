@@ -1,27 +1,11 @@
-# Landscape Architecture Film Series Website
+# LAFS
 
-An early aughts basic website recreated using modern tools
-
-## Description
-
-> [!NOTE]
-> ALL CONTENTS IN THIS REPO ARE FOR EDUCATIONAL PURPOSES ONLY.
-
-In the early aughts, I co-founded the _Landscape Architecture Film Series_ for the Department of Landscape Architecture at the University of Illinois Urbana/Champaign and for which I designed a website.
-
-In need of a website to use as a vehicle to play around with a few AWS services (see [Future Work](#future-work)) but not wanting to spend anytime to ideate and design a new one from scratch, I turned to my [old website](https://web.archive.org/web/20040827234527/http://www.rehearsal.uiuc.edu/projects/filmseries/). Its look and feel has aged well, I think, and indeed looks remarkably contemporary. For instance, if the current version of MoMA's [film series](https://www.moma.org/calendar/film/) is anything to go by, bold color blocking isn't a dated design choice.
-
-This, then, is that 20-year-old static website resurrected as a dynamic web application with a data model to speak of, using modern tools such as Flask, SQLite, VS Code and Git.
-
-_*Note* A custom-made Content Management System (CMS) for the website is in development. Check it out in its own [repo](https://github.com/ggeerraarrdd/lafs-cms)._
-
-![Film Series](/docs/images/film-series1_2.jpg "Landscape Architecture Film Series")
-
-More screenshots below.
+A digital archive for a Landscape Architecture Film Series website from the early aughts
 
 ## Table of Contents
 
 * [Description](#description)
+* [Target Users](#target-users)
 * [Features](#features)
 * [Project Structure](#project-structure)
 * [Prerequisites](#prerequisites)
@@ -29,7 +13,8 @@ More screenshots below.
   * [Dependencies](#dependencies)
   * [Installation](#installation)
   * [Configuration](#configuration)
-  * [Usage](#usage)
+* [Usage](#usage)
+* [System Administration](#system-administration)
 * [Author(s)](#authors)
 * [Version History](#version-history)
   * [Release Notes](#release-notes)
@@ -40,14 +25,32 @@ More screenshots below.
 * [Acknowledgments](#acknowledgments)
 * [Screenshots](#screenshots)
 
+## Description
+
+> [!NOTE]
+> ALL CONTENTS IN THIS REPO ARE FOR EDUCATIONAL PURPOSES ONLY.
+
+_LAFS_ serves as a digital archive for the website of a _Landscape Architecture Film Series_, which I co-founded and co-curated for the [Department of Landscape Architecture](https://landarch.illinois.edu/) at the University of Illinois Urbana/Champaign in the early 2000s.
+
+This repository preserves a sentimental piece of personal digital history. What would otherwise exist only as slowly disintegrating bits on a forgotten CD in a remote storage facility, as [fragmented snapshots](https://web.archive.org/web/20040827234527/http://www.rehearsal.uiuc.edu/projects/filmseries/) somewhere in the depths of the Internet Archive, or as a vaselined landscape in some province of collective memory has—here and at [l-a-f-s.org](https://l-a-f-s.org/)—been meticulously restored and recreated.
+
+![Film Series](/docs/images/film-series1_2.jpg "Landscape Architecture Film Series")
+
+## Target Users
+
+_LAFS_ is intended for:
+
+* **Self-guided learners** seeking a reference implementation of modern backend web architecture powering a straightforward content website with simple navigation patterns.
+* **Landscape architecture students and faculty** interested in the intersection of film and landscape studies.
+* **Cinema enthusiasts** looking for a good film to watch.
+
 ## Features
 
-* 🌐 Dynamic web application built with Flask and SQLite
-* 🛠️ Modern development tools integration
-* 📚 Historical archive of a student-led film series website from the early 2000s
-* 🎬 Recreated film database preserving information about past screenings
-* 🗺️ Google Maps integration for historical location reference
-* 📱 Mobile-responsive design preserving original color blocking aesthetic
+* 📚 **Historical Preservation** - Faithful recreation of website from the early 2000s
+* 🌐 **Modern Dev Tooling** - Implementation of a modern web architecture and software development practices
+* 📱 **Dynamic Responsiveness** - Mobile-adjustable layout for today's wide range of devices
+* 🎬 **Curated Film Database** - Recreated collection preserving information about past screenings
+* 🗺️ **Location Context** - Google Maps integration for historical site reference
 
 ## Project Structure
 
@@ -81,8 +84,9 @@ film-series/
 │   │
 │   └── app.py
 │
-├── docs/
 ├── logs/
+│
+├── docs/
 ├── .gitignore
 ├── LICENSE
 ├── README.md
@@ -188,7 +192,7 @@ TODO
     * [Set up your Google Cloud project](https://developers.google.com/maps/documentation/javascript/cloud-setup)
     * [Using API Keys](https://developers.google.com/maps/documentation/javascript/get-api-key)
 
-### Usage
+## Usage
 
 1. **Go into the `app` directory and run the command:**
 
@@ -199,6 +203,10 @@ TODO
 2. **Open the film series website**
 
     Copy and open the URL displayed after 'Running on' in the terminal.
+
+## System Administration
+
+* TBD
 
 ## Author(s)
 
