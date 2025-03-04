@@ -1,6 +1,6 @@
 # LAFS
 
-A digital archive for a Landscape Architecture Film Series website from the early aughts
+A digital archive of the Landscape Architecture Film Series website from the early aughts
 
 ## Table of Contents
 
@@ -38,7 +38,7 @@ This repository preserves a sentimental piece of personal digital history. What 
 
 To learn how this project came about, check out [_LAFS-DEV_](https://github.com/ggeerraarrdd/lafs-dev).
 
-![Film Series](/docs/images/film-series1_2.jpg "Landscape Architecture Film Series")
+![LAFS](/assets/images/film-series1_2.jpg "Landscape Architecture Film Series")
 
 ## Target Users
 
@@ -59,7 +59,7 @@ _LAFS_ is intended for:
 ## Project Structure
 
 ```text
-film-series/
+lafs/
 │
 ├── app/
 │   │
@@ -99,26 +99,25 @@ film-series/
 
 ## Quick Start
 
-For developers familiar with Python environments who want to quickly get _LAFS_ running, this one-command setup will launch the development server with default settings:
+For those who want to get up and running quickly with default settings:
 
 ```bash
-# Clone the repository
+# Clone the repo
 git clone https://github.com/ggeerraarrdd/lafs.git
-
-# Setup environment and install dependencies
 cd lafs
-python -m venv venv
+
+# Set up environment and install dependencies
+python3 -m venv venv
 source venv/bin/activate  # On Windows use `venv\\Scripts\\activate`
 pip install -r requirements.txt
 
 # Run the application
 flask run
 
-# Access the website
-# Copy the URL displayed in the terminal after 'Running on' and open in your browser
+# Navigate to the URL specified in the terminal output
 ```
 
-### Local Setup
+## Local Setup
 
 ### Prerequisites
 
@@ -133,19 +132,21 @@ flask run
 1. **Clone the repository**
 
     ```bash
-    git clone https://github.com/ggeerraarrdd/film-series.git
+    git clone https://github.com/ggeerraarrdd/lafs.git
+    cd lafs
     ```
 
-2. **Create and activate a virtual environment**
+2. **Create and activate a Python virtual environment**
 
     ```bash
-    python -m venv venv
+    python3 -m venv venv
     source venv/bin/activate  # On Windows use `venv\Scripts\activate`
     ```
 
 3. **Install the dependencies**
 
     ```bash
+    python -m pip install --upgrade pip
     pip install -r requirements.txt
     ```
 
@@ -245,7 +246,7 @@ flask run
 
 ### Release Notes
 
-* See [https://github.com/ggeerraarrdd/film-series/releases](https://github.com/ggeerraarrdd/film-series/releases)
+* See [https://github.com/ggeerraarrdd/lafs/releases](https://github.com/ggeerraarrdd/lafs/releases)
 
 ### Initial Release
 
@@ -257,7 +258,7 @@ The [original website](https://web.archive.org/web/20040827234527/http://www.reh
 
 ## License
 
-* [MIT License](https://github.com/ggeerraarrdd/film-series/blob/main/LICENSE)
+* [MIT License](https://github.com/ggeerraarrdd/lafs/blob/main/LICENSE)
 
 ## Contributing
 
@@ -269,13 +270,13 @@ This project is not accepting contributions at this time. It is intended solely 
 
 ## Screenshots
 
-![Film Series](/docs/images/film-series0_2.png "Landscape Architecture Film Series")
+![LAFS](/docs/images/film-series0_2.png "Landscape Architecture Film Series")
 _(Image created using [Portfoliofy](https://github.com/ggeerraarrdd/portfoliofy).)_
 
-![Film Series](/docs/images/film-series2_2.jpg "Landscape Architecture Film Series")
-![Film Series](/docs/images/film-series3_2.jpg "Landscape Architecture Film Series")
-![Film Series](/docs/images/film-series4_2.png "Landscape Architecture Film Series")
-![Film Series](/docs/images/film-series5_2.png "Landscape Architecture Film Series")
+![LAFS](/assets/images/film-series2_2.jpg "Landscape Architecture Film Series")
+![LAFS](/assets/images/film-series3_2.jpg "Landscape Architecture Film Series")
+![LAFS](/assets/images/film-series4_2.png "Landscape Architecture Film Series")
+![LAFS](/assets/images/film-series5_2.png "Landscape Architecture Film Series")
 
 ## Frontispiece
 
