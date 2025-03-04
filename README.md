@@ -4,6 +4,9 @@ A digital archive of the Landscape Architecture Film Series website from the ear
 
 ## Table of Contents
 
+> [!NOTE]
+> ALL CONTENTS IN THIS REPO ARE FOR EDUCATIONAL PURPOSES ONLY.
+
 * [Description](#description)
 * [Target Users](#target-users)
 * [Features](#features)
@@ -29,9 +32,6 @@ A digital archive of the Landscape Architecture Film Series website from the ear
 
 ## Description
 
-> [!NOTE]
-> ALL CONTENTS IN THIS REPO ARE FOR EDUCATIONAL PURPOSES ONLY.
-
 _LAFS_ serves as a digital archive for the website of the _Landscape Architecture Film Series_, a student-led initiative which I co-founded and co-curated for the [Department of Landscape Architecture](https://landarch.illinois.edu/) at the University of Illinois Urbana-Champaign in the early 2000s.
 
 This repository preserves a sentimental piece of personal digital history. What would otherwise exist only as slowly disintegrating bits on a forgotten CD in a remote storage facility, as [fragmented snapshots](https://web.archive.org/web/20040827234527/http://www.rehearsal.uiuc.edu/projects/filmseries/) somewhere in the depths of the Internet Archive, or as a vaselined landscape in some province of collective memory has—here and at [l-a-f-s.org](https://l-a-f-s.org/)—been meticulously restored and recreated.
@@ -46,7 +46,7 @@ _LAFS_ is intended for:
 
 * **Self-guided learners** seeking a reference implementation of modern backend web architecture powering a straightforward content website with simple navigation patterns.
 * **Landscape architecture students and faculty** interested in the intersection of film and landscape studies.
-* **Cinema enthusiasts** looking for a good film to watch.
+* **Cinema enthusiasts** looking for a few good films to watch.
 
 ## Features
 
@@ -90,7 +90,7 @@ lafs/
 │
 ├── logs/
 │
-├── docs/
+├── assets/
 ├── .gitignore
 ├── LICENSE
 ├── README.md
@@ -208,7 +208,7 @@ Before you begin, ensure you have met the following requirements:
     * `BASE_DELAY` - initial delay between retries in seconds
     * `MAX_DELAY` - max delay between retries in seconds
 
-3. **Flask Secret Key Options Explained**
+3. **Flask Secret Key Option Explained**
 
     From Flask's [official documentation](https://flask.palletsprojects.com/en/stable/config/): _A secret key that will be used for securely signing the session cookie and can be used for any other security related needs by extensions or your application. It should be a long random bytes or str. For example, copy the output of this to your config:_
 
@@ -217,7 +217,7 @@ Before you begin, ensure you have met the following requirements:
     '192b9bdd22ab9ed4d12e236c78afcb9a393ec15f71bbf5dc987d54727823bcbf'
     ```
 
-    The above is used as system default for local development. You can generate a new one using the `secrets` module fro Python standard library or using your preferred method.
+    The above is the system default and should only be used for local development. You can generate a new one using the `secrets` module from the Python standard library or using your preferred method.
 
 ## Usage
 
