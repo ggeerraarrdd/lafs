@@ -8,12 +8,14 @@ A digital archive for a Landscape Architecture Film Series website from the earl
 * [Target Users](#target-users)
 * [Features](#features)
 * [Project Structure](#project-structure)
-* [Prerequisites](#prerequisites)
-* [Getting Started](#getting-started)
+* [Quick Start](#quick-start)
+* [Local Setup](#local-setup)
+  * [Prerequisites](#prerequisites)
   * [Dependencies](#dependencies)
   * [Installation](#installation)
   * [Configuration](#configuration)
 * [Usage](#usage)
+* [Production Setup](#production-setup)
 * [System Administration](#system-administration)
 * [Author(s)](#authors)
 * [Version History](#version-history)
@@ -95,11 +97,32 @@ film-series/
 └── requirements.txt
 ```
 
-## Prerequisites
+## Quick Start
 
-TODO
+For developers familiar with Python environments who want to quickly get _LAFS_ running, this one-command setup will launch the development server with default settings:
 
-## Getting Started
+```bash
+# Clone the repository
+git clone https://github.com/ggeerraarrdd/lafs.git
+
+# Setup environment and install dependencies
+cd lafs
+python -m venv venv
+source venv/bin/activate  # On Windows use `venv\\Scripts\\activate`
+pip install -r requirements.txt
+
+# Run the application
+flask run
+
+# Access the website
+# Copy the URL displayed in the terminal after 'Running on' and open in your browser
+```
+
+### Local Setup
+
+### Prerequisites
+
+* TBD
 
 ### Dependencies
 
@@ -206,6 +229,10 @@ TODO
 
     Copy and open the URL displayed after 'Running on' in the terminal.
 
+## Production Setup
+
+* TBD
+
 ## System Administration
 
 * TBD
@@ -226,9 +253,7 @@ The [original website](https://web.archive.org/web/20040827234527/http://www.reh
 
 ## Future Work
 
-Improvements and new features development are ongoing.
-
-* Create CMS for user management and content creation and editing _(currently in alpha - see [repo](https://github.com/ggeerraarrdd/lafs-cms))_
+* TBD
 
 ## License
 
