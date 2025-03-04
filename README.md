@@ -102,16 +102,17 @@ lafs/
 For those who want to get up and running quickly with default settings:
 
 ```bash
-# Clone the repo
+# Clone repository
 git clone https://github.com/ggeerraarrdd/lafs.git
 cd lafs
 
-# Set up environment and install dependencies
+# Set up environment
 python3 -m venv venv
-source venv/bin/activate  # On Windows use `venv\\Scripts\\activate`
+source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
-# Run the application
+# Run app
+cd app
 flask run
 
 # Navigate to the URL specified in the terminal output
@@ -121,7 +122,20 @@ flask run
 
 ### Prerequisites
 
-* TBD
+Before you begin, ensure you have met the following requirements:
+
+1. **Development Tools**
+
+    * Python 3.12 (not tested on other versions)
+    * [git](https://git-scm.com/) (for cloning the repository)
+
+2. **Google Maps API Key**
+
+    For the embedded maps to work, you need to set up a Google Maps API Key. Before you can create one, you will need to create a Google Cloud project, for which you need a Google Cloud account.
+
+    * [Set up a Google Cloud account](https://cloud.google.com)
+    * [Set up your Google Cloud project](https://developers.google.com/maps/documentation/javascript/cloud-setup)
+    * [Create and configure your API Key](https://developers.google.com/maps/documentation/javascript/get-api-key)
 
 ### Dependencies
 
@@ -136,7 +150,7 @@ flask run
     cd lafs
     ```
 
-2. **Create and activate a Python virtual environment**
+2. **Set up a Python virtual environment**
 
     ```bash
     python3 -m venv venv
@@ -146,9 +160,8 @@ flask run
 3. **Install the dependencies**
 
     ```bash
-    python -m pip install --upgrade pip
+    pip install --upgrade pip
     pip install -r requirements.txt
-    ```
 
 ### Configuration
 
@@ -173,50 +186,38 @@ flask run
     MAX_DELAY=10
 
     # Flask Secret Key
-    SECRET_KEY='your_flask_secret_key'
+    SECRET_KEY='192b9bdd22ab9ed4d12e236c78afcb9a393ec15f71bbf5dc987d54727823bcbf'
 
     # Google Maps API Key
     MAP_API_KEY='your_map_api_key'
     ```
 
-2. **Database**
+2. **Database Options Explained**
 
-    ```python
-    # Database Path
-    DATABASE_NAME='data/lafs.db'  # Path to SQLite database file
+    `DATABASE_NAME` - path to SQLite database file
 
-    # Database Connection Pool
-    POOL_SIZE=15   # Max number of persistent connections
-    MAX_OVERFLOW=5  # Max number of connections above POOL_SIZE
-    POOL_TIMEOUT=30  # Seconds to wait for available connection
-    POOL_RECYCLE=1800  # Seconds before connection is recycled
-    ECHO=False  # Enable SQLAlchemy engine logging
+    SQLAlchemy [Engine/Connection Pool](https://docs.sqlalchemy.org/en/20/core/engines_connections.html) Parameters:
+    * `POOL_SIZE` - max number of persistent connections
+    * `MAX_OVERFLOW` - max number of connections above POOL_SIZE
+    * `POOL_TIMEOUT` - seconds to wait for available connection
+    * `POOL_RECYCLE` - seconds before connection is recycled
+    * `ECHO` - enable SQLAlchemy engine logging
 
-    # Database Retry Settings
-    MAX_RETRIES=3  #  Max retry attempts for failed operations
-    BASE_DELAY=1  # Initial delay between retries in seconds
-    MAX_DELAY=10  # Max delay between retries in seconds
+    Custom Retry Mechanism Parameters:
+    * `MAX_RETRIES` - max retry attempts for failed operations
+    * `BASE_DELAY` - initial delay between retries in seconds
+    * `MAX_DELAY` - max delay between retries in seconds
+
+3. **Flask Secret Key Options Explained**
+
+    From Flask's [official documentation](https://flask.palletsprojects.com/en/stable/config/): _A secret key that will be used for securely signing the session cookie and can be used for any other security related needs by extensions or your application. It should be a long random bytes or str. For example, copy the output of this to your config:_
+
+    ```bash
+    $ python -c 'import secrets; print(secrets.token_hex())'
+    '192b9bdd22ab9ed4d12e236c78afcb9a393ec15f71bbf5dc987d54727823bcbf'
     ```
 
-3. **Flask Secret Key**
-
-    ```python
-    # Flask Secret Key
-    SECRET_KEY='your_flask_secret_key'
-    ```
-
-4. **Google Maps API Key**
-
-    ```python
-    # Google Maps API Key
-    MAP_API_KEY='your_map_api_key'
-    ```
-
-    An API Key is needed for the embedded map to work. Before you can create one, you will need to create a Google Cloud project, for which you need a Google Cloud account.
-
-    * [Set up a Google Cloud account](https://cloud.google.com)
-    * [Set up your Google Cloud project](https://developers.google.com/maps/documentation/javascript/cloud-setup)
-    * [Using API Keys](https://developers.google.com/maps/documentation/javascript/get-api-key)
+    The above is used as system default for local development. You can generate a new one using the `secrets` module fro Python standard library or using your preferred method.
 
 ## Usage
 
@@ -228,7 +229,11 @@ flask run
 
 2. **Open the film series website**
 
-    Copy and open the URL displayed after 'Running on' in the terminal.
+    Navigate to the URL specified in the terminal output. For example:
+
+    ```bash
+    * Running on http://127.0.0.1:5000
+    ```
 
 ## Production Setup
 
@@ -270,7 +275,7 @@ This project is not accepting contributions at this time. It is intended solely 
 
 ## Screenshots
 
-![LAFS](/docs/images/film-series0_2.png "Landscape Architecture Film Series")
+![LAFS](/assets/images/film-series0_2.png "Landscape Architecture Film Series")
 _(Image created using [Portfoliofy](https://github.com/ggeerraarrdd/portfoliofy).)_
 
 ![LAFS](/assets/images/film-series2_2.jpg "Landscape Architecture Film Series")
