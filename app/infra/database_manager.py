@@ -17,11 +17,12 @@ Technical Features:
 """
 
 # Python Standard Library
+from contextlib import contextmanager  # Context management
 import inspect
 import logging  # Runtime logging and monitoring
+import os
 import time
 from typing import Any, Dict, List
-from contextlib import contextmanager  # Context management
 
 # Third-Party Libraries
 from sqlalchemy import create_engine, text, event
@@ -42,11 +43,17 @@ from app.config import MAX_DELAY
 from .log import setup_logging
 
 
-# Initialize logging
-setup_logging()
+# Check if logging is enabled
+IS_LOGGING = os.getenv('IS_LOGGING', 'False').lower() == 'true'
 
-# Set up our diary (logging)
-logger = logging.getLogger(__name__)
+if IS_LOGGING:
+    # Initialize logging only if enabled
+    setup_logging()
+    logger = logging.getLogger(__name__)
+else:
+    # Create a null logger when logging is disabled
+    logger = logging.getLogger('null')
+    logger.addHandler(logging.NullHandler())
 
 
 
@@ -86,11 +93,11 @@ class DatabaseManager:
         self.engine = create_engine(
             f'sqlite:///{DATABASE_NAME}',
             poolclass=QueuePool,
-            pool_size=POOL_SIZE,              # How many connections we maintain
-            max_overflow=MAX_OVERFLOW,        # Extra connections when busy
-            pool_timeout=POOL_TIMEOUT,        # How long to wait for a connection
-            pool_recycle=POOL_RECYCLE,        # When to refresh connections
-            echo=ECHO                         # Whether to log all SQL
+            pool_size=POOL_SIZE,                # How many connections we maintain
+            max_overflow=MAX_OVERFLOW,          # Extra connections when busy
+            pool_timeout=POOL_TIMEOUT,          # How long to wait for a connection
+            pool_recycle=POOL_RECYCLE,          # When to refresh connections
+            echo=ECHO if IS_LOGGING else False  # Whether to log all SQL, based on IS_LOGGING
         )
 
         # Retry configuration parameters
@@ -150,7 +157,8 @@ class DatabaseManager:
         except Exception as e:
 
             session.rollback()  # Rollback on exception
-            logger.error("Transaction failed: %s", e)
+            if IS_LOGGING:
+                logger.error("Transaction failed: %s", e)
             raise
 
         finally:
@@ -176,8 +184,9 @@ class DatabaseManager:
 
             with self.transaction() as session:
 
-                log_prefix = f"[{caller}]"
-                logger.info("%s - Executing read query", log_prefix)
+                if IS_LOGGING:
+                    log_prefix = f"[{caller}]"
+                    logger.info("%s - Executing read query", log_prefix)
 
                 result = session.execute(text(query), parameters or {})
                 columns = result.keys()
@@ -187,15 +196,17 @@ class DatabaseManager:
                     data.append(row_dict)
 
                 # Record execution metrics
-                execution_time = time.time() - start_time
-                logger.info("%s - Executed read query in %.2fs", log_prefix, execution_time)
+                if IS_LOGGING:
+                    execution_time = time.time() - start_time
+                    logger.info("%s - Executed read query in %.2fs", log_prefix, execution_time)
 
                 return data
 
         except Exception as e:
 
-            execution_time = time.time() - start_time
-            logger.error("Read query failed after %.2fs: %s", execution_time, e)
+            if IS_LOGGING:
+                execution_time = time.time() - start_time
+                logger.error("Read query failed after %.2fs: %s", execution_time, e)
             raise
 
 
@@ -215,10 +226,12 @@ class DatabaseManager:
                 session.execute(text(query), parameters or {})
 
                 # Record execution metrics
-                execution_time = time.time() - start_time
-                logger.info("Write query executed in %.2fs", execution_time)
+                if IS_LOGGING:
+                    execution_time = time.time() - start_time
+                    logger.info("Write query executed in %.2fs", execution_time)
 
         except Exception as e:
-            execution_time = time.time() - start_time
-            logger.error("Write query failed after %.2fs: %s", execution_time, e)
+            if IS_LOGGING:
+                execution_time = time.time() - start_time
+                logger.error("Write query failed after %.2fs: %s", execution_time, e)
             raise
