@@ -40,6 +40,9 @@ To learn how this project came about, check out [_LAFS-DEV_](https://github.com/
 
 ![LAFS](/assets/images/film-series1_2.jpg "Landscape Architecture Film Series")
 
+> [!NOTE]
+> More screenshots below.
+
 ## Target Users
 
 _LAFS_ is intended for:
