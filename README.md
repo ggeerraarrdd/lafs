@@ -180,10 +180,13 @@ Before you begin, ensure you have met the following requirements:
     POOL_RECYCLE=-1
     ECHO=False
 
-    # Database Retry Settings
+    # Custom Database Retry Settings
     MAX_RETRIES=3
     BASE_DELAY=1
     MAX_DELAY=10
+
+    # Logging
+    IS_LOGGING=False
 
     # Flask Secret Key
     SECRET_KEY='192b9bdd22ab9ed4d12e236c78afcb9a393ec15f71bbf5dc987d54727823bcbf'
@@ -208,7 +211,21 @@ Before you begin, ensure you have met the following requirements:
     * `BASE_DELAY` - initial delay between retries in seconds
     * `MAX_DELAY` - max delay between retries in seconds
 
-3. **Flask Secret Key Option Explained**
+3. **Logging Option Explained**
+
+    The logging functionality can be controlled through `IS_LOGGING`:
+
+    ```bash
+    IS_LOGGING=False
+    ```
+
+    When logging is enabled (IS_LOGGING=True):
+
+    * Log files are created and stored in the logs/ directory at the root of the project.
+    * SQL query execution times, transaction status and errors are tracked.
+    * Each log entry includes the calling function name for better traceability.
+
+4. **Flask Secret Key Option Explained**
 
     From Flask's [official documentation](https://flask.palletsprojects.com/en/stable/config/): _A secret key that will be used for securely signing the session cookie and can be used for any other security related needs by extensions or your application. It should be a long random bytes or str. For example, copy the output of this to your config:_
 
@@ -285,4 +302,4 @@ _(Image created using [Portfoliofy](https://github.com/ggeerraarrdd/portfoliofy)
 
 ## Frontispiece
 
-* TBD
+Landscape Architecture Film Series. (2002). Screenshot of website [Digital image]. Captured 2023. Retrieved from <https://l-a-f-s.org>
