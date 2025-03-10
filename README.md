@@ -1,3 +1,12 @@
+<!-- markdownlint-disable MD041 -->
+[![GitHub release](https://img.shields.io/github/v/release/ggeerraarrdd/lafs)](https://github.com/ggeerraarrdd/lafs/releases)
+[![Maintenance](https://img.shields.io/badge/maintained-yes-green.svg)](https://github.com/ggeerraarrdd/lafs/commits/main/)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/8f1e9e2d31e44f4b91d674116b496f53)](https://app.codacy.com/gh/ggeerraarrdd/lafs/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+[![codecov](https://codecov.io/gh/ggeerraarrdd/lafs/graph/badge.svg?token=CNKJC8WQ1I)](https://codecov.io/gh/ggeerraarrdd/lafs)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ggeerraarrdd_lafs&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ggeerraarrdd_lafs)
+[![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
+<!-- markdownlint-enable MD041 -->
+
 # LAFS
 
 A digital archive of the Landscape Architecture Film Series website from the early aughts
