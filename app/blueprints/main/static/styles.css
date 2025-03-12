@@ -7,7 +7,7 @@
 * AT MINIMUM IPAD IN LANDSCAPE MODE
 * 
 */
-@media only screen and (min-width: 1100px) {
+@media only screen and (width >= 1100px) {
   body {
     margin: 0;
     padding: 0;
@@ -57,7 +57,7 @@
 
   .top-container-byline {
     margin: 0;
-    padding: 10px 20px 10px 20px;
+    padding: 10px 20px;
     width: 55vw;
   }
 
@@ -255,7 +255,7 @@
 * SMALLER THAN IPAD IN LANDSCAPE MODE
 * 
 */
-@media only screen and (max-width: 1099px) {
+@media only screen and (width < 1100px) {
   .body-screen {
     margin: 0;
     padding: 0;
@@ -369,7 +369,7 @@
 
   .middle-container-right-index-screen {
     margin: 0;
-    padding: 40px 30px 40px 30px;
+    padding: 40px 30px;
     height: auto;
     width: auto;
     position: static;
@@ -382,10 +382,7 @@
 
   .middle-container-right-film-screen {
     margin: 0;
-    padding-top: 35px;
-    padding-right: 30px;
-    padding-bottom: 35px;
-    padding-left: 30px;
+    padding: 35px 30px;
     height: auto;
     width: auto;
     position: static;
@@ -451,7 +448,7 @@
   }
 
   .button-title {
-    padding: 2px 2px 2px 0px;
+    padding: 2px 2px 2px 0;
     background: none !important;
     border: none;
     cursor: pointer;
@@ -496,46 +493,3 @@
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.container {
-  margin: 50px 0 0 0;
-  padding: 50px;
-  border-radius: 25px;
-  background-color: white;
-
-}
-
-.text-start {
-  margin: 0;
-  padding: 10px 30px 10px 0;
-  
-}
-
-.text-start a {
-  color: #6C757D;
-  text-decoration: none;
-  border-bottom: 1px #6C757D dotted;
-}
-
-tbody {
-  font-size: 14px;
-}
