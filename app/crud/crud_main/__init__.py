@@ -1,6 +1,4 @@
-"""
-TD
-"""
+"""TD"""
 
 from .crud_main import get_id_current_series
 from .crud_main import get_info_series

@@ -1,6 +1,4 @@
-"""
-TD
-"""
+"""TD"""
 
 from .utils_shared import login_required
 from .utils_shared import apology

@@ -1,6 +1,4 @@
-"""
-TD
-"""
+"""TD"""
 
 from . import routes
 
