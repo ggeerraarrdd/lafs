@@ -1,6 +1,4 @@
-"""
-TD
-"""
+"""TD"""
 
 import logging
 import os

@@ -1,6 +1,4 @@
-"""
-Database management module for SQLite operations.
-"""
+"""Database management module for SQLite operations."""
 
 # Python Standard Library
 import logging
@@ -29,9 +27,7 @@ logger = logging.getLogger(__name__)
 
 
 def get_db():
-    """
-    Get or create DatabaseManager instance.
-    """
+    """Get or create DatabaseManager instance."""
     if 'db' not in g:
         db = DatabaseManager()
         g.db = db

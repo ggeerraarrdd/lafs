@@ -1,6 +1,4 @@
-"""
-TD
-"""
+"""TD"""
 
 # Python Standard Library
 from functools import wraps
