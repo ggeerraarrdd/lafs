@@ -1,5 +1,4 @@
-"""
-SQLite connection pool and transaction manager. Implements connection pooling, 
+"""SQLite connection pool and transaction manager. Implements connection pooling,
 transaction management, automatic retry mechanisms, and comprehensive 
 monitoring/logging capabilities.
 

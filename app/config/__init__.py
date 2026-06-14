@@ -1,5 +1,4 @@
-"""
-Configuration module for LAFS application.
+"""Configuration module for LAFS application.
 
 This module imports and re-exports all configuration settings from:
 

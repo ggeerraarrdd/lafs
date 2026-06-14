@@ -1,5 +1,4 @@
-"""
-Landscape Architecture Film Series (LAFS) Web Application
+"""Landscape Architecture Film Series (LAFS) Web Application
 
 This Flask application serves as a digital archive and repository of past
 installments of LAFS. It preserves and provides access to:

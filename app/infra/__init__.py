@@ -1,5 +1,4 @@
-"""
-Infrastructure module for application.
+"""Infrastructure module for application.
 
 This module provides core infrastructure components including:
 - Database management and connection pooling

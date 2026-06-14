@@ -1,5 +1,4 @@
-"""
-Google Maps API key management.
+"""Google Maps API key management.
 
 The MAP_API_KEY environment variable must be set to a valid Google Maps API key
 for accessing Google Maps Platform features. This key is used for generating 

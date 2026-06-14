@@ -1,5 +1,4 @@
-"""
-Database configuration settings for SQLAlchemy connection pool and 
+"""Database configuration settings for SQLAlchemy connection pool and
 retry mechanism.
 
 Configuration is loaded from environment variables with fallback defaults:
