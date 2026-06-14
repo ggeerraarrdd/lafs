@@ -98,8 +98,6 @@ def get_info_series(series_id: int) -> Dict[str, Any]:
         return None
 
     results = results_query[0]
-    if results['series_poster_url']:
-        results['series_poster_url'] = f"{{ url_for('main_bp.static', filename=f'images/{results['series_poster_url']}') }}"
 
     return results
 
