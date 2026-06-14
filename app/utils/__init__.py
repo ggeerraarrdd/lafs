@@ -1,4 +1,4 @@
-"""TD"""
+"""Utility functions and decorators for the LAFS application."""
 
 from .utils_shared import login_required
 from .utils_shared import apology

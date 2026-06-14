@@ -1,4 +1,4 @@
-"""TD"""
+"""Public interface for shared utility functions."""
 
 from .utils_shared import login_required
 from .utils_shared import apology

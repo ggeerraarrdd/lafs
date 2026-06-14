@@ -1,4 +1,4 @@
-"""TD"""
+"""Route handlers and view functions for the main blueprint."""
 
 # Python Standard Library
 from typing import Tuple, List, Dict

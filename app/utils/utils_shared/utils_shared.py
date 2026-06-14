@@ -1,4 +1,4 @@
-"""TD"""
+"""Shared utility decorators and error response helpers."""
 
 # Python Standard Library
 from functools import wraps

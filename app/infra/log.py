@@ -1,4 +1,4 @@
-"""TD"""
+"""Logging configuration utilities for the LAFS application."""
 
 import logging
 import os
@@ -14,9 +14,7 @@ import os
 
 
 def setup_logging():
-    """
-    TD
-    """
+    """Configure file and console logging for the application."""
     # Configure logging without file output initially
     logging.basicConfig(
         level=logging.INFO,
